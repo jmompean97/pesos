@@ -5,21 +5,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PesosTrack | Seguimiento de medidas</title>
-    <meta name="description" content="Seguimiento visual del progreso de pérdida de peso y medidas corporales de Gema y Jorge." />
+    <meta name="description" content="Seguimiento visual del progreso corporal de Gema y Jorge." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/modals.css" />
     <script>
         (function () {
-            const theme = localStorage.getItem('pesostrack-theme') || 'dark';
-            document.documentElement.setAttribute('data-theme', theme);
-            if (localStorage.getItem('pesostrack-gist-active') === 'true') {
+            const t = localStorage.getItem('pesostrack-theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', t);
+            if (localStorage.getItem('pesostrack-gist-active') === 'true')
                 document.documentElement.classList.add('is-sync-loading');
-            }
         })();
     </script>
 </head>
@@ -41,8 +42,8 @@
                 <div class="logo">
                     <div class="logo-icon">
                         <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-                                fill="currentColor" />
+                            <path d="M3 3v18M3 12h18M12 3v18" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
                         </svg>
                     </div>
                     <span class="logo-text">PesosTrack</span>
@@ -52,203 +53,326 @@
                     <span class="sync-text">Sin Gist</span>
                 </div>
             </div>
-
             <div class="header-actions">
-                <button class="btn btn-header btn-theme-toggle" id="btn-theme" onclick="ThemeToggle.toggle()" title="Cambiar tema" aria-label="Cambiar tema">
+                <button class="btn btn-header btn-theme-toggle" id="btn-theme" onclick="ThemeToggle.toggle()"
+                    title="Cambiar tema">
                     <svg class="icon-moon" viewBox="0 0 24 24" fill="none">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                     <svg class="icon-sun" viewBox="0 0 24 24" fill="none" style="display:none">
                         <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2" />
-                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path
+                            d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                     </svg>
                 </button>
-                <button class="btn btn-header btn-header-pink" onclick="App.openGistModal()" id="btn-gist-settings" title="Configurar sincronización GitHub Gist">
+                <button class="btn btn-header btn-header-pink" onclick="App.openGistModal()" id="btn-gist-settings"
+                    title="Gist Sync">
                     <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M12 2C6.48 2 2 6.48 2 12C2 16.42 4.87 20.17 8.84 21.5C9.34 21.58 9.5 21.27 9.5 21C9.5 20.77 9.5 20.14 9.5 19.31C6.73 19.91 6.14 17.97 6.14 17.97C5.68 16.81 5.03 16.5 5.03 16.5C4.12 15.88 5.1 15.9 5.1 15.9C6.1 15.97 6.63 16.93 6.63 16.93C7.5 18.45 8.97 18 9.54 17.76C9.63 17.11 9.89 16.67 10.17 16.42C7.95 16.17 5.62 15.31 5.62 11.5C5.62 10.39 6 9.5 6.65 8.79C6.55 8.54 6.2 7.5 6.75 6.15C6.75 6.15 7.59 5.88 9.5 7.17C10.29 6.95 11.15 6.84 12 6.84C12.85 6.84 13.71 6.95 14.5 7.17C16.41 5.88 17.25 6.15 17.25 6.15C17.8 7.5 17.45 8.54 17.35 8.79C18 9.5 18.38 10.39 18.38 11.5C18.38 15.32 16.04 16.16 13.81 16.41C14.17 16.72 14.5 17.33 14.5 18.26C14.5 19.6 14.5 20.68 14.5 21C14.5 21.27 14.66 21.59 15.17 21.5C19.14 20.16 22 16.42 22 12C22 6.48 17.52 2 12 2Z"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-.69C6.73 19.91 6.14 18 6.14 18c-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53.97 1.53.97.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.84c.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85 0 1.34-.01 2.42-.01 2.75 0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12c0-5.52-4.48-10-10-10z"
+                            fill="currentColor" />
                     </svg>
-                    Gist Sync
+                    <span class="btn-text">Gist Sync</span>
                 </button>
-                <button class="btn btn-header btn-header-green" onclick="App.exportJSON()" id="btn-export" title="Exportar JSON">
+                <button class="btn btn-header btn-header-green" onclick="App.exportJSON()" title="Exportar JSON">
                     <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M21 15V19C21 19.53 20.79 20.04 20.41 20.41C20.04 20.79 19.53 21 19 21H5C4.47 21 3.96 20.79 3.59 20.41C3.21 20.04 3 19.53 3 19V15M7 10L12 15L17 10M12 15V3"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    Exportar
+                    <span class="btn-text">Exportar</span>
                 </button>
-                <button class="btn btn-header" onclick="App.importJSON()" id="btn-import" title="Importar JSON">
+                <button class="btn btn-header" onclick="App.importJSON()" title="Importar JSON">
                     <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M21 15V19C21 19.53 20.79 20.04 20.41 20.41C20.04 20.79 19.53 21 19 21H5C4.47 21 3.96 20.79 3.59 20.41C3.21 20.04 3 19.53 3 19V15M17 8L12 3L7 8M12 3V15"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    Importar
+                    <span class="btn-text">Importar</span>
                 </button>
-                <button class="btn btn-header btn-header-red" onclick="App.resetAll()" id="btn-reset" title="Borrar todos los datos">
+                <button class="btn btn-header btn-header-red" onclick="App.resetAll()" title="Reset">
                     <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M3 6H5H21M8 6V4C8 3.47 8.21 2.96 8.59 2.59C8.96 2.21 9.47 2 10 2H14C14.53 2 15.04 2.21 15.41 2.59C15.79 2.96 16 3.47 16 4V6M19 6V20C19 20.53 18.79 21.04 18.41 21.41C18.04 21.79 17.53 22 17 22H7C6.47 22 5.96 21.79 5.59 21.41C5.21 21.04 5 20.53 5 20V6H19Z"
-                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M3 6h18M8 6V4h8v2M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                    Reset
                 </button>
             </div>
         </div>
     </header>
 
+    <!-- PERSON TABS -->
+    <div class="person-tabs-wrapper">
+        <div class="person-tabs" role="tablist">
+            <div class="person-tab-group">
+                <button class="person-tab active" id="tab-jorge" role="tab" aria-selected="true"
+                    aria-controls="panel-jorge" onclick="App.switchPerson('jorge')">
+                    <span class="person-tab-avatar avatar-jorge">J</span>
+                    <span class="person-tab-name">Jorge</span>
+                </button>
+                <button class="btn btn-add-inline btn-add-jorge" onclick="App.openAddModal('jorge')"
+                    title="Añadir dato">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+            </div>
+            <div class="person-tab-group">
+                <button class="person-tab" id="tab-gema" role="tab" aria-selected="false" aria-controls="panel-gema"
+                    onclick="App.switchPerson('gema')">
+                    <span class="person-tab-avatar avatar-gema">G</span>
+                    <span class="person-tab-name">Gema</span>
+                </button>
+                <button class="btn btn-add-inline btn-add-gema" onclick="App.openAddModal('gema')" title="Añadir dato">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- MAIN -->
     <main class="app-main">
 
-        <div class="persons-grid">
+        <!-- PANEL JORGE -->
+        <div id="panel-jorge" class="person-panel" role="tabpanel" aria-labelledby="tab-jorge">
 
-            <!-- ===== GEMA ===== -->
-            <section class="section section-gema" id="section-gema">
-                <div class="section-header">
-                    <div class="person-badge badge-gema">G</div>
-                    <div>
-                        <h2 class="section-title">Gema</h2>
-                        <p class="section-desc">Muslo izquierdo · seguimiento semanal</p>
+            <!-- Stats cards -->
+            <div class="stats-cards" id="stats-jorge"></div>
+
+            <!-- Chart: Peso -->
+            <div class="chart-section" id="chart-section-peso-jorge">
+                <div class="chart-header">
+                    <div class="chart-header-left">
+                        <span class="chart-dot" style="background:#10b981"></span>
+                        <h3 class="chart-title">Peso corporal (kg)</h3>
                     </div>
-                    <button class="btn btn-add-gema section-add-btn" id="btn-add-gema" onclick="App.openAddModal('gema')">
+                    <div class="chart-type-switcher" id="chart-type-peso-jorge">
+                        <button class="chart-type-btn active" onclick="UI.switchChartType('jorge','peso','line',this)"
+                            title="Líneas">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M3 17l5-5 4 4 9-9" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <button class="chart-type-btn" onclick="UI.switchChartType('jorge','peso','bar',this)"
+                            title="Barras">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <rect x="3" y="12" width="4" height="9" rx="1" fill="currentColor" opacity=".5" />
+                                <rect x="10" y="7" width="4" height="14" rx="1" fill="currentColor" opacity=".7" />
+                                <rect x="17" y="3" width="4" height="18" rx="1" fill="currentColor" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="canvas-peso-jorge"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart: Medidas -->
+            <div class="chart-section" id="chart-section-medidas-jorge">
+                <div class="chart-header">
+                    <div class="chart-header-left">
+                        <span class="chart-dot" style="background:#3b82f6"></span>
+                        <h3 class="chart-title">Medidas corporales (cm)</h3>
+                    </div>
+                    <div class="chart-header-right">
+                        <div class="chart-toggles" id="chart-toggles-jorge"></div>
+                        <div class="chart-type-switcher" id="chart-type-medidas-jorge">
+                            <button class="chart-type-btn active"
+                                onclick="UI.switchChartType('jorge','medidas','line',this)" title="Líneas">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <path d="M3 17l5-5 4 4 9-9" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <button class="chart-type-btn" onclick="UI.switchChartType('jorge','medidas','bar',this)"
+                                title="Barras">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <rect x="3" y="12" width="4" height="9" rx="1" fill="currentColor" opacity=".5" />
+                                    <rect x="10" y="7" width="4" height="14" rx="1" fill="currentColor" opacity=".7" />
+                                    <rect x="17" y="3" width="4" height="18" rx="1" fill="currentColor" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="canvas-medidas-jorge"></canvas>
+                </div>
+            </div>
+
+            <!-- Table + Add button -->
+            <div class="data-section">
+                <div class="data-section-header">
+                    <h3 class="data-section-title">Registro de medidas</h3>
+                </div>
+
+                <div class="empty-state" id="empty-jorge">
+                    <div class="empty-icon empty-icon-jorge">J</div>
+                    <p class="empty-title">Sin medidas todavía</p>
+                    <p class="empty-desc">Añade la primera medición de Jorge para ver su progreso</p>
+                    <button class="btn btn-add-jorge" onclick="App.openAddModal('jorge')" style="margin-top:1rem;">
                         <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" />
                         </svg>
-                        Añadir dato
+                        Añadir primera entrada
                     </button>
                 </div>
 
-                <!-- Stats -->
-                <div class="stats-row stats-row-gema" id="stats-gema" style="display:none;"></div>
-
-                <!-- Progress bars -->
-                <div class="progress-section" id="progress-gema" style="display:none;"></div>
-
-                <!-- Chart -->
-                <div class="chart-container" id="chart-container-gema" style="display:none;">
-                    <canvas id="chart-gema"></canvas>
-                    <div class="chart-legend">
-                        <div class="legend-item"><div class="legend-dot" style="background:#ec4899"></div> Muslo Izq.</div>
-                        <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div> Cintura</div>
-                        <div class="legend-item"><div class="legend-dot" style="background:#10b981"></div> Peso</div>
-                    </div>
-                </div>
-
-                <!-- Table -->
-                <div class="table-wrapper" id="table-wrapper-gema" style="display:none;">
-                    <table class="data-table" id="table-gema">
-                        <thead>
-                            <tr>
-                                <th>Fecha</th>
-                                <th>Peso (kg)</th>
-                                <th class="col-highlight-gema">Muslo Izq. (cm)</th>
-                                <th>Cintura (cm)</th>
-                                <th>Cadera (cm)</th>
-                                <th>Pecho (cm)</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody id="tbody-gema"></tbody>
-                    </table>
-                </div>
-
-                <!-- Empty -->
-                <div class="empty-state" id="empty-gema" style="display:flex; flex-direction:column; align-items:center;">
-                    <div class="empty-icon">
-                        <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor" opacity="0.4"/>
-                        </svg>
-                    </div>
-                    <p class="empty-title">Sin datos todavía</p>
-                    <p class="empty-desc">Pulsa "Añadir dato" para registrar la primera medición</p>
-                </div>
-            </section>
-
-            <!-- ===== JORGE ===== -->
-            <section class="section section-jorge" id="section-jorge">
-                <div class="section-header">
-                    <div class="person-badge badge-jorge">J</div>
-                    <div>
-                        <h2 class="section-title">Jorge</h2>
-                        <p class="section-desc">Muslo derecho · seguimiento semanal</p>
-                    </div>
-                    <button class="btn btn-add-jorge section-add-btn" id="btn-add-jorge" onclick="App.openAddModal('jorge')">
-                        <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
-                        </svg>
-                        Añadir dato
-                    </button>
-                </div>
-
-                <!-- Stats -->
-                <div class="stats-row stats-row-jorge" id="stats-jorge" style="display:none;"></div>
-
-                <!-- Progress bars -->
-                <div class="progress-section" id="progress-jorge" style="display:none;"></div>
-
-                <!-- Chart -->
-                <div class="chart-container" id="chart-container-jorge" style="display:none;">
-                    <canvas id="chart-jorge"></canvas>
-                    <div class="chart-legend">
-                        <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div> Muslo Der.</div>
-                        <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div> Cintura</div>
-                        <div class="legend-item"><div class="legend-dot" style="background:#10b981"></div> Peso</div>
-                    </div>
-                </div>
-
-                <!-- Table -->
                 <div class="table-wrapper" id="table-wrapper-jorge" style="display:none;">
-                    <table class="data-table" id="table-jorge">
+                    <table class="data-table">
                         <thead>
                             <tr>
                                 <th>Fecha</th>
-                                <th>Peso (kg)</th>
-                                <th class="col-highlight-jorge">Muslo Der. (cm)</th>
-                                <th>Cintura (cm)</th>
-                                <th>Cadera (cm)</th>
-                                <th>Pecho (cm)</th>
+                                <th class="col-key col-jorge">Peso (kg)</th>
+                                <th>Muslo Der.</th>
+                                <th>Cintura</th>
+                                <th>Cadera</th>
+                                <th>Pecho</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody id="tbody-jorge"></tbody>
                     </table>
                 </div>
-
-                <!-- Empty -->
-                <div class="empty-state" id="empty-jorge" style="display:flex; flex-direction:column; align-items:center;">
-                    <div class="empty-icon">
-                        <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor" opacity="0.4"/>
-                        </svg>
-                    </div>
-                    <p class="empty-title">Sin datos todavía</p>
-                    <p class="empty-desc">Pulsa "Añadir dato" para registrar la primera medición</p>
-                </div>
-            </section>
-
+            </div>
         </div>
+
+        <!-- PANEL GEMA -->
+        <div id="panel-gema" class="person-panel" role="tabpanel" aria-labelledby="tab-gema" hidden>
+
+            <!-- Stats cards -->
+            <div class="stats-cards" id="stats-gema"></div>
+
+            <!-- Chart: Peso -->
+            <div class="chart-section" id="chart-section-peso-gema">
+                <div class="chart-header">
+                    <div class="chart-header-left">
+                        <span class="chart-dot" style="background:#10b981"></span>
+                        <h3 class="chart-title">Peso corporal (kg)</h3>
+                    </div>
+                    <div class="chart-type-switcher" id="chart-type-peso-gema">
+                        <button class="chart-type-btn active" onclick="UI.switchChartType('gema','peso','line',this)"
+                            title="Líneas">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M3 17l5-5 4 4 9-9" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <button class="chart-type-btn" onclick="UI.switchChartType('gema','peso','bar',this)"
+                            title="Barras">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <rect x="3" y="12" width="4" height="9" rx="1" fill="currentColor" opacity=".5" />
+                                <rect x="10" y="7" width="4" height="14" rx="1" fill="currentColor" opacity=".7" />
+                                <rect x="17" y="3" width="4" height="18" rx="1" fill="currentColor" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="canvas-peso-gema"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart: Medidas -->
+            <div class="chart-section" id="chart-section-medidas-gema">
+                <div class="chart-header">
+                    <div class="chart-header-left">
+                        <span class="chart-dot" style="background:#ec4899"></span>
+                        <h3 class="chart-title">Medidas corporales (cm)</h3>
+                    </div>
+                    <div class="chart-header-right">
+                        <div class="chart-toggles" id="chart-toggles-gema"></div>
+                        <div class="chart-type-switcher" id="chart-type-medidas-gema">
+                            <button class="chart-type-btn active"
+                                onclick="UI.switchChartType('gema','medidas','line',this)" title="Líneas">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <path d="M3 17l5-5 4 4 9-9" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <button class="chart-type-btn" onclick="UI.switchChartType('gema','medidas','bar',this)"
+                                title="Barras">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <rect x="3" y="12" width="4" height="9" rx="1" fill="currentColor" opacity=".5" />
+                                    <rect x="10" y="7" width="4" height="14" rx="1" fill="currentColor" opacity=".7" />
+                                    <rect x="17" y="3" width="4" height="18" rx="1" fill="currentColor" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="canvas-medidas-gema"></canvas>
+                </div>
+            </div>
+
+            <!-- Table + Add button -->
+            <div class="data-section">
+                <div class="data-section-header">
+                    <h3 class="data-section-title">Registro de medidas</h3>
+                </div>
+
+                <div class="empty-state" id="empty-gema">
+                    <div class="empty-icon empty-icon-gema">G</div>
+                    <p class="empty-title">Sin medidas todavía</p>
+                    <p class="empty-desc">Añade la primera medición de Gema para ver su progreso</p>
+                    <button class="btn btn-add-gema" onclick="App.openAddModal('gema')" style="margin-top:1rem;">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" />
+                        </svg>
+                        Añadir primera entrada
+                    </button>
+                </div>
+
+                <div class="table-wrapper" id="table-wrapper-gema" style="display:none;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th class="col-key col-gema">Peso (kg)</th>
+                                <th>Muslo Izq.</th>
+                                <th>Cintura</th>
+                                <th>Cadera</th>
+                                <th>Pecho</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-gema"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <footer class="app-footer">
-        <p>&copy; 2026 PesosTrack · Creado con ❤️ por <a href="https://github.com/jmompean97" target="_blank" rel="noopener">Jorge Mompeán</a></p>
+        <p>&copy; 2026 PesosTrack · <a href="https://github.com/jmompean97" target="_blank" rel="noopener">Jorge
+                Mompeán</a></p>
     </footer>
 
     <!-- MODAL: Nueva entrada -->
     <div class="modal-overlay" id="modal-overlay-entry" onclick="App.closeEntryModalOnOverlay(event)">
-        <div class="modal modal-gema" id="modal-entry">
+        <div class="modal" id="modal-entry">
             <div class="modal-header">
                 <div class="modal-header-left">
-                    <div class="modal-person-icon modal-icon-gema" id="modal-person-icon">G</div>
+                    <div class="modal-person-icon" id="modal-person-icon">G</div>
                     <h3 class="modal-title" id="modal-entry-title">Nueva entrada</h3>
                 </div>
-                <button class="modal-close" onclick="App.closeEntryModal()" aria-label="Cerrar">
+                <button class="modal-close" onclick="App.closeEntryModal()">
                     <svg viewBox="0 0 24 24" fill="none">
                         <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                     </svg>
                 </button>
             </div>
             <div class="modal-body">
-                <div class="form-group">
-                    <label class="form-label" for="entry-fecha">Fecha *</label>
-                    <input class="form-input" type="date" id="entry-fecha" />
+                <div class="form-group" style="margin-bottom: 0.85rem;">
+                    <label class="form-label" for="entry-fecha">Fecha y hora *</label>
+                    <input class="form-input" type="datetime-local" step="1" id="entry-fecha" />
                 </div>
                 <p class="modal-section-title">Medidas</p>
                 <div class="form-row">
@@ -281,9 +405,10 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-outline" onclick="App.closeEntryModal()">Cancelar</button>
-                <button class="btn btn-primary-gema" id="btn-save-entry" onclick="App.saveEntry()">
+                <button class="btn btn-save" id="btn-save-entry" onclick="App.saveEntry()">
                     <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
                     </svg>
                     Guardar
                 </button>
@@ -293,18 +418,12 @@
 
     <!-- MODAL: Gist Sync -->
     <div class="modal-overlay" id="modal-overlay-gist" onclick="App.closeGistModalOnOverlay(event)">
-        <div class="modal modal-gist-config">
+        <div class="modal modal-sm">
             <div class="modal-header">
                 <div class="modal-header-left">
-                    <div class="modal-person-icon modal-icon-gema">
-                        <svg viewBox="0 0 24 24" fill="none" style="width:16px;height:16px;">
-                            <path d="M12 2C6.48 2 2 6.48 2 12C2 16.42 4.87 20.17 8.84 21.5C9.34 21.58 9.5 21.27 9.5 21C9.5 20.77 9.5 20.14 9.5 19.31C6.73 19.91 6.14 17.97 6.14 17.97C5.68 16.81 5.03 16.5 5.03 16.5C4.12 15.88 5.1 15.9 5.1 15.9C6.1 15.97 6.63 16.93 6.63 16.93C7.5 18.45 8.97 18 9.54 17.76C9.63 17.11 9.89 16.67 10.17 16.42C7.95 16.17 5.62 15.31 5.62 11.5C5.62 10.39 6 9.5 6.65 8.79C6.55 8.54 6.2 7.5 6.75 6.15C6.75 6.15 7.59 5.88 9.5 7.17C10.29 6.95 11.15 6.84 12 6.84C12.85 6.84 13.71 6.95 14.5 7.17C16.41 5.88 17.25 6.15 17.25 6.15C17.8 7.5 17.45 8.54 17.35 8.79C18 9.5 18.38 10.39 18.38 11.5C18.38 15.32 16.04 16.16 13.81 16.41C14.17 16.72 14.5 17.33 14.5 18.26C14.5 19.6 14.5 20.68 14.5 21C14.5 21.27 14.66 21.59 15.17 21.5C19.14 20.16 22 16.42 22 12C22 6.48 17.52 2 12 2Z"
-                                stroke="currentColor" stroke-width="1.5" />
-                        </svg>
-                    </div>
                     <h3 class="modal-title">Sincronización GitHub Gist</h3>
                 </div>
-                <button class="modal-close" onclick="App.closeGistModal()" aria-label="Cerrar">
+                <button class="modal-close" onclick="App.closeGistModal()">
                     <svg viewBox="0 0 24 24" fill="none">
                         <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                     </svg>
@@ -315,28 +434,30 @@
                     <span class="gist-status-neutral">Sin configurar — introduce tu PAT</span>
                 </div>
                 <details class="gist-help">
-                    <summary>¿Cómo obtener un Personal Access Token (PAT)?</summary>
+                    <summary>¿Cómo obtener un PAT?</summary>
                     <ol>
-                        <li>Ve a <a href="https://github.com/settings/tokens?type=beta" target="_blank" rel="noopener">github.com/settings/tokens</a></li>
-                        <li>Pulsa <strong>"Generate new token (fine-grained)"</strong></li>
-                        <li>Dale un nombre (ej: <em>pesostrack</em>) y selecciona <strong>Gists: Read and write</strong></li>
-                        <li>Copia el token generado y pégalo abajo</li>
+                        <li>Ve a <a href="https://github.com/settings/tokens?type=beta" target="_blank"
+                                rel="noopener">github.com/settings/tokens</a></li>
+                        <li>Genera un token con permiso <strong>Gists: Read and write</strong></li>
+                        <li>Copia y pega el token abajo</li>
                     </ol>
                 </details>
                 <div class="form-group" style="margin-top:1rem;">
-                    <label class="form-label" for="gist-pat">Personal Access Token (PAT)</label>
-                    <input class="form-input" type="password" id="gist-pat" placeholder="github_pat_…" autocomplete="off" />
-                    <p class="field-hint">Solo se guarda en tu navegador (IndexedDB), nunca se envía a ningún servidor.</p>
+                    <label class="form-label" for="gist-pat">Personal Access Token</label>
+                    <input class="form-input" type="password" id="gist-pat" placeholder="github_pat_…"
+                        autocomplete="off" />
+                    <p class="field-hint">Solo se guarda en tu navegador (IndexedDB).</p>
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="gist-id">ID del Gist <span class="field-optional">(opcional — déjalo vacío para crear uno nuevo)</span></label>
+                    <label class="form-label" for="gist-id">ID del Gist <span class="field-optional">(vacío = crear
+                            nuevo)</span></label>
                     <input class="form-input" type="text" id="gist-id" placeholder="a1b2c3d4e5f6…" autocomplete="off" />
-                    <p class="field-hint">Si ya tienes un Gist de PesosTrack, pega aquí su ID para cargar los datos.</p>
                 </div>
                 <div class="gist-actions">
                     <button class="btn btn-primary-gema" id="btn-gist-connect" onclick="App.connectGist()">
                         <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
                         </svg>
                         Conectar
                     </button>
@@ -357,19 +478,11 @@
                 document.documentElement.setAttribute('data-theme', theme);
                 const btn = document.getElementById('btn-theme');
                 if (!btn) return;
-                const moon = btn.querySelector('.icon-moon');
-                const sun = btn.querySelector('.icon-sun');
-                if (theme === 'light') {
-                    moon.style.display = 'none'; sun.style.display = 'block';
-                    btn.title = 'Cambiar a modo oscuro';
-                } else {
-                    moon.style.display = 'block'; sun.style.display = 'none';
-                    btn.title = 'Cambiar a modo claro';
-                }
+                btn.querySelector('.icon-moon').style.display = theme === 'light' ? 'none' : 'block';
+                btn.querySelector('.icon-sun').style.display = theme === 'light' ? 'block' : 'none';
             }
             function toggle() {
-                const current = document.documentElement.getAttribute('data-theme') || 'dark';
-                const next = current === 'dark' ? 'light' : 'dark';
+                const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
                 localStorage.setItem(KEY, next);
                 _apply(next);
             }
@@ -377,29 +490,11 @@
             return { toggle };
         })();
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
     <script src="js/db.js"></script>
     <script src="js/gist.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/app.js"></script>
-
-    <!-- Show chart containers when data is present (handled by UI.renderTable toggling) -->
-    <script>
-        // After refresh, show chart containers if entries > 1
-        const _origRefresh = App.init;
-        // Patch renderChart to also show container
-        const _origRenderTable = UI.renderTable;
-
-        // Expose chart container toggle via MutationObserver on tbody
-        ['gema', 'jorge'].forEach(p => {
-            const container = document.getElementById(`chart-container-${p}`);
-            const tbody = document.getElementById(`tbody-${p}`);
-            if (!container || !tbody) return;
-            const obs = new MutationObserver(() => {
-                const rows = tbody.querySelectorAll('tr').length;
-                container.style.display = rows >= 2 ? 'block' : 'none';
-            });
-            obs.observe(tbody, { childList: true });
-        });
-    </script>
 </body>
+
 </html>

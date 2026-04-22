@@ -1,0 +1,1608 @@
+{
+  "_v": 1,
+  "_at": "2026-04-22T09:49:36.977Z",
+  "gema": [
+    {
+      "fecha": "2026-01-13T09:03:48",
+      "peso": 90,
+      "musloIzq": 90.4,
+      "cintura": 99.9,
+      "cadera": 125.3,
+      "pecho": 95.3
+    },
+    {
+      "fecha": "2026-01-14T10:23:01",
+      "peso": 89.5,
+      "musloIzq": 89.7,
+      "cintura": 99.4,
+      "cadera": 125.1,
+      "pecho": 95.3
+    },
+    {
+      "fecha": "2026-01-15T08:12:45",
+      "peso": 90.1,
+      "musloIzq": 89.5,
+      "cintura": 99.8,
+      "cadera": 124.5,
+      "pecho": 95.2
+    },
+    {
+      "fecha": "2026-01-16T15:50:26",
+      "peso": 89.3,
+      "musloIzq": 88.9,
+      "cintura": 99,
+      "cadera": 123.9,
+      "pecho": 94.6
+    },
+    {
+      "fecha": "2026-01-17T07:48:27",
+      "peso": 89.2,
+      "musloIzq": 88.9,
+      "cintura": 98.9,
+      "cadera": 123.8,
+      "pecho": 95
+    },
+    {
+      "fecha": "2026-01-18T11:13:56",
+      "peso": 89.4,
+      "musloIzq": 88.8,
+      "cintura": 99.1,
+      "cadera": 123.6,
+      "pecho": 94.9
+    },
+    {
+      "fecha": "2026-01-19T06:02:08",
+      "peso": 89.2,
+      "musloIzq": 88.9,
+      "cintura": 98.6,
+      "cadera": 123.1,
+      "pecho": 95
+    },
+    {
+      "fecha": "2026-01-20T13:52:37",
+      "peso": 88.8,
+      "musloIzq": 88.4,
+      "cintura": 98.9,
+      "cadera": 123.2,
+      "pecho": 94.7
+    },
+    {
+      "fecha": "2026-01-21T06:37:48",
+      "peso": 88.5,
+      "musloIzq": 88.2,
+      "cintura": 98.6,
+      "cadera": 123.3,
+      "pecho": 95
+    },
+    {
+      "fecha": "2026-01-22T11:42:44",
+      "peso": 88.9,
+      "musloIzq": 87.6,
+      "cintura": 98.5,
+      "cadera": 123,
+      "pecho": 94.2
+    },
+    {
+      "fecha": "2026-01-23T09:42:33",
+      "peso": 88.7,
+      "musloIzq": 87.2,
+      "cintura": 98.1,
+      "cadera": 122.2,
+      "pecho": 94.3
+    },
+    {
+      "fecha": "2026-01-24T10:30:19",
+      "peso": 88.1,
+      "musloIzq": 87,
+      "cintura": 97.4,
+      "cadera": 122.3,
+      "pecho": 94.2
+    },
+    {
+      "fecha": "2026-01-25T04:34:26",
+      "peso": 88.3,
+      "musloIzq": 86.7,
+      "cintura": 97.9,
+      "cadera": 122,
+      "pecho": 94.5
+    },
+    {
+      "fecha": "2026-01-26T10:56:29",
+      "peso": 87.7,
+      "musloIzq": 86.9,
+      "cintura": 97.3,
+      "cadera": 122,
+      "pecho": 94.5
+    },
+    {
+      "fecha": "2026-01-27T14:59:15",
+      "peso": 87.9,
+      "musloIzq": 86.8,
+      "cintura": 97.5,
+      "cadera": 121.5,
+      "pecho": 93.9
+    },
+    {
+      "fecha": "2026-01-28T09:29:19",
+      "peso": 87.5,
+      "musloIzq": 86.1,
+      "cintura": 97.2,
+      "cadera": 121.5,
+      "pecho": 94.4
+    },
+    {
+      "fecha": "2026-01-29T06:02:03",
+      "peso": 87.6,
+      "musloIzq": 85.7,
+      "cintura": 96.6,
+      "cadera": 120.9,
+      "pecho": 93.9
+    },
+    {
+      "fecha": "2026-01-30T07:13:58",
+      "peso": 87.2,
+      "musloIzq": 85.4,
+      "cintura": 96.2,
+      "cadera": 120.4,
+      "pecho": 93.8
+    },
+    {
+      "fecha": "2026-01-31T04:17:28",
+      "peso": 86.9,
+      "musloIzq": 85.6,
+      "cintura": 96.6,
+      "cadera": 120.9,
+      "pecho": 94.1
+    },
+    {
+      "fecha": "2026-02-01T10:24:33",
+      "peso": 87.5,
+      "musloIzq": 85.4,
+      "cintura": 95.8,
+      "cadera": 120.5,
+      "pecho": 93.9
+    },
+    {
+      "fecha": "2026-02-02T04:17:57",
+      "peso": 87.3,
+      "musloIzq": 84.9,
+      "cintura": 95.6,
+      "cadera": 119.6,
+      "pecho": 93.8
+    },
+    {
+      "fecha": "2026-02-03T14:21:18",
+      "peso": 86.9,
+      "musloIzq": 84.9,
+      "cintura": 95.5,
+      "cadera": 120.1,
+      "pecho": 94.3
+    },
+    {
+      "fecha": "2026-02-04T09:37:34",
+      "peso": 86.3,
+      "musloIzq": 84.5,
+      "cintura": 95.7,
+      "cadera": 119.6,
+      "pecho": 94.1
+    },
+    {
+      "fecha": "2026-02-05T07:58:47",
+      "peso": 86.3,
+      "musloIzq": 84.5,
+      "cintura": 95.6,
+      "cadera": 119.4,
+      "pecho": 94.2
+    },
+    {
+      "fecha": "2026-02-06T14:26:50",
+      "peso": 86.4,
+      "musloIzq": 84.3,
+      "cintura": 94.8,
+      "cadera": 118.8,
+      "pecho": 93.8
+    },
+    {
+      "fecha": "2026-02-07T05:51:16",
+      "peso": 86.4,
+      "musloIzq": 83.7,
+      "cintura": 94.7,
+      "cadera": 119.1,
+      "pecho": 94
+    },
+    {
+      "fecha": "2026-02-08T15:53:34",
+      "peso": 86.4,
+      "musloIzq": 83.7,
+      "cintura": 95,
+      "cadera": 118.3,
+      "pecho": 93.4
+    },
+    {
+      "fecha": "2026-02-09T14:47:06",
+      "peso": 85.5,
+      "musloIzq": 83.6,
+      "cintura": 94.8,
+      "cadera": 118.1,
+      "pecho": 93.5
+    },
+    {
+      "fecha": "2026-02-10T11:57:44",
+      "peso": 85.7,
+      "musloIzq": 83.1,
+      "cintura": 93.9,
+      "cadera": 118.3,
+      "pecho": 93.3
+    },
+    {
+      "fecha": "2026-02-11T14:11:48",
+      "peso": 85.7,
+      "musloIzq": 82.8,
+      "cintura": 94.4,
+      "cadera": 118,
+      "pecho": 93.5
+    },
+    {
+      "fecha": "2026-02-12T08:22:08",
+      "peso": 85.6,
+      "musloIzq": 82.5,
+      "cintura": 94.3,
+      "cadera": 117.5,
+      "pecho": 93.2
+    },
+    {
+      "fecha": "2026-02-13T06:30:04",
+      "peso": 85.3,
+      "musloIzq": 82.5,
+      "cintura": 93.9,
+      "cadera": 117.3,
+      "pecho": 93.4
+    },
+    {
+      "fecha": "2026-02-14T09:39:04",
+      "peso": 84.8,
+      "musloIzq": 81.8,
+      "cintura": 93.4,
+      "cadera": 116.7,
+      "pecho": 93.7
+    },
+    {
+      "fecha": "2026-02-15T06:11:22",
+      "peso": 85.1,
+      "musloIzq": 81.5,
+      "cintura": 93.3,
+      "cadera": 116.9,
+      "pecho": 93.2
+    },
+    {
+      "fecha": "2026-02-16T07:29:25",
+      "peso": 85.2,
+      "musloIzq": 81.1,
+      "cintura": 93.2,
+      "cadera": 116.6,
+      "pecho": 93.3
+    },
+    {
+      "fecha": "2026-02-17T08:05:49",
+      "peso": 84.8,
+      "musloIzq": 81.4,
+      "cintura": 92.9,
+      "cadera": 116.2,
+      "pecho": 93.1
+    },
+    {
+      "fecha": "2026-02-18T13:24:55",
+      "peso": 84.7,
+      "musloIzq": 80.9,
+      "cintura": 93.1,
+      "cadera": 115.9,
+      "pecho": 92.8
+    },
+    {
+      "fecha": "2026-02-19T04:55:05",
+      "peso": 84.1,
+      "musloIzq": 81,
+      "cintura": 92.4,
+      "cadera": 115.3,
+      "pecho": 93.2
+    },
+    {
+      "fecha": "2026-02-20T10:41:58",
+      "peso": 84.5,
+      "musloIzq": 80.1,
+      "cintura": 92.7,
+      "cadera": 115.6,
+      "pecho": 92.7
+    },
+    {
+      "fecha": "2026-02-21T08:29:51",
+      "peso": 83.9,
+      "musloIzq": 79.8,
+      "cintura": 92.4,
+      "cadera": 115.1,
+      "pecho": 93
+    },
+    {
+      "fecha": "2026-02-22T13:20:41",
+      "peso": 83.6,
+      "musloIzq": 79.7,
+      "cintura": 91.6,
+      "cadera": 114.7,
+      "pecho": 93.1
+    },
+    {
+      "fecha": "2026-02-23T12:24:01",
+      "peso": 83.5,
+      "musloIzq": 79.7,
+      "cintura": 91.8,
+      "cadera": 114.4,
+      "pecho": 93.1
+    },
+    {
+      "fecha": "2026-02-24T14:56:49",
+      "peso": 83.3,
+      "musloIzq": 79.4,
+      "cintura": 91.8,
+      "cadera": 114,
+      "pecho": 92.8
+    },
+    {
+      "fecha": "2026-02-25T04:47:03",
+      "peso": 83.4,
+      "musloIzq": 79.3,
+      "cintura": 91.5,
+      "cadera": 114.1,
+      "pecho": 92.9
+    },
+    {
+      "fecha": "2026-02-26T10:58:11",
+      "peso": 83.6,
+      "musloIzq": 78.9,
+      "cintura": 91.3,
+      "cadera": 114.3,
+      "pecho": 93
+    },
+    {
+      "fecha": "2026-02-27T12:18:19",
+      "peso": 83.1,
+      "musloIzq": 78.5,
+      "cintura": 90.7,
+      "cadera": 113.3,
+      "pecho": 92.4
+    },
+    {
+      "fecha": "2026-02-28T07:08:47",
+      "peso": 83.2,
+      "musloIzq": 78.7,
+      "cintura": 90.6,
+      "cadera": 113.3,
+      "pecho": 92.3
+    },
+    {
+      "fecha": "2026-03-01T13:20:27",
+      "peso": 82.7,
+      "musloIzq": 78.1,
+      "cintura": 90.1,
+      "cadera": 113,
+      "pecho": 92.8
+    },
+    {
+      "fecha": "2026-03-02T12:57:21",
+      "peso": 82.7,
+      "musloIzq": 78.1,
+      "cintura": 90.3,
+      "cadera": 113.1,
+      "pecho": 92.8
+    },
+    {
+      "fecha": "2026-03-03T12:21:24",
+      "peso": 82.4,
+      "musloIzq": 77.4,
+      "cintura": 90.2,
+      "cadera": 112.5,
+      "pecho": 92.6
+    },
+    {
+      "fecha": "2026-03-04T13:17:44",
+      "peso": 82.1,
+      "musloIzq": 77.7,
+      "cintura": 89.8,
+      "cadera": 112.6,
+      "pecho": 92.8
+    },
+    {
+      "fecha": "2026-03-05T09:26:17",
+      "peso": 82.2,
+      "musloIzq": 77,
+      "cintura": 89.9,
+      "cadera": 112.3,
+      "pecho": 92.4
+    },
+    {
+      "fecha": "2026-03-06T14:28:58",
+      "peso": 82.3,
+      "musloIzq": 76.6,
+      "cintura": 89.2,
+      "cadera": 111.7,
+      "pecho": 92.7
+    },
+    {
+      "fecha": "2026-03-07T04:05:46",
+      "peso": 82.2,
+      "musloIzq": 76.2,
+      "cintura": 89.2,
+      "cadera": 111.6,
+      "pecho": 92.2
+    },
+    {
+      "fecha": "2026-03-08T08:39:09",
+      "peso": 81.9,
+      "musloIzq": 76.4,
+      "cintura": 88.7,
+      "cadera": 111.3,
+      "pecho": 91.9
+    },
+    {
+      "fecha": "2026-03-09T13:16:28",
+      "peso": 81.5,
+      "musloIzq": 76.2,
+      "cintura": 88.5,
+      "cadera": 110.8,
+      "pecho": 92.6
+    },
+    {
+      "fecha": "2026-03-10T05:21:08",
+      "peso": 81.3,
+      "musloIzq": 75.7,
+      "cintura": 89,
+      "cadera": 110.9,
+      "pecho": 92.6
+    },
+    {
+      "fecha": "2026-03-11T14:15:27",
+      "peso": 81.6,
+      "musloIzq": 75.9,
+      "cintura": 88.2,
+      "cadera": 110.4,
+      "pecho": 92.2
+    },
+    {
+      "fecha": "2026-03-12T07:48:54",
+      "peso": 81.6,
+      "musloIzq": 75.6,
+      "cintura": 88.2,
+      "cadera": 110.1,
+      "pecho": 91.8
+    },
+    {
+      "fecha": "2026-03-13T06:53:25",
+      "peso": 80.9,
+      "musloIzq": 75,
+      "cintura": 88.1,
+      "cadera": 110.3,
+      "pecho": 92.3
+    },
+    {
+      "fecha": "2026-03-14T05:44:17",
+      "peso": 80.8,
+      "musloIzq": 75.2,
+      "cintura": 87.9,
+      "cadera": 109.9,
+      "pecho": 92.2
+    },
+    {
+      "fecha": "2026-03-15T12:54:55",
+      "peso": 81.1,
+      "musloIzq": 74.8,
+      "cintura": 87.3,
+      "cadera": 109.9,
+      "pecho": 92.1
+    },
+    {
+      "fecha": "2026-03-16T07:41:17",
+      "peso": 80.7,
+      "musloIzq": 74.1,
+      "cintura": 87.6,
+      "cadera": 109.2,
+      "pecho": 91.9
+    },
+    {
+      "fecha": "2026-03-17T05:23:05",
+      "peso": 80.6,
+      "musloIzq": 73.8,
+      "cintura": 87.4,
+      "cadera": 109.1,
+      "pecho": 91.9
+    },
+    {
+      "fecha": "2026-03-18T06:05:35",
+      "peso": 80.2,
+      "musloIzq": 73.7,
+      "cintura": 86.9,
+      "cadera": 109.1,
+      "pecho": 91.7
+    },
+    {
+      "fecha": "2026-03-19T10:59:59",
+      "peso": 80.3,
+      "musloIzq": 73.5,
+      "cintura": 87,
+      "cadera": 108.4,
+      "pecho": 92
+    },
+    {
+      "fecha": "2026-03-20T15:14:38",
+      "peso": 80,
+      "musloIzq": 73.4,
+      "cintura": 86.9,
+      "cadera": 108.7,
+      "pecho": 91.8
+    },
+    {
+      "fecha": "2026-03-21T14:54:05",
+      "peso": 80.1,
+      "musloIzq": 73.4,
+      "cintura": 86.6,
+      "cadera": 108.2,
+      "pecho": 92
+    },
+    {
+      "fecha": "2026-03-22T11:47:53",
+      "peso": 79.4,
+      "musloIzq": 72.9,
+      "cintura": 86.4,
+      "cadera": 107.6,
+      "pecho": 91.3
+    },
+    {
+      "fecha": "2026-03-23T09:21:08",
+      "peso": 79.7,
+      "musloIzq": 72.9,
+      "cintura": 85.9,
+      "cadera": 107.5,
+      "pecho": 91.8
+    },
+    {
+      "fecha": "2026-03-24T15:26:05",
+      "peso": 79.4,
+      "musloIzq": 72.5,
+      "cintura": 86.3,
+      "cadera": 107.7,
+      "pecho": 91.5
+    },
+    {
+      "fecha": "2026-03-25T12:20:13",
+      "peso": 79.3,
+      "musloIzq": 71.8,
+      "cintura": 85.6,
+      "cadera": 106.9,
+      "pecho": 91.1
+    },
+    {
+      "fecha": "2026-03-26T11:56:05",
+      "peso": 79.2,
+      "musloIzq": 71.5,
+      "cintura": 85.8,
+      "cadera": 107.1,
+      "pecho": 91.5
+    },
+    {
+      "fecha": "2026-03-27T11:18:37",
+      "peso": 79,
+      "musloIzq": 71.8,
+      "cintura": 85.6,
+      "cadera": 107,
+      "pecho": 91
+    },
+    {
+      "fecha": "2026-03-28T08:36:37",
+      "peso": 79.1,
+      "musloIzq": 71.1,
+      "cintura": 84.7,
+      "cadera": 106.6,
+      "pecho": 91.5
+    },
+    {
+      "fecha": "2026-03-29T13:07:00",
+      "peso": 78.9,
+      "musloIzq": 70.7,
+      "cintura": 84.7,
+      "cadera": 106.3,
+      "pecho": 91.2
+    },
+    {
+      "fecha": "2026-03-30T09:46:07",
+      "peso": 78.6,
+      "musloIzq": 70.8,
+      "cintura": 84.4,
+      "cadera": 105.8,
+      "pecho": 91.3
+    },
+    {
+      "fecha": "2026-03-31T05:42:14",
+      "peso": 78.4,
+      "musloIzq": 70.2,
+      "cintura": 84.4,
+      "cadera": 105.6,
+      "pecho": 90.9
+    },
+    {
+      "fecha": "2026-04-01T12:11:01",
+      "peso": 78.1,
+      "musloIzq": 70.2,
+      "cintura": 84.3,
+      "cadera": 105,
+      "pecho": 91.4
+    },
+    {
+      "fecha": "2026-04-02T04:32:30",
+      "peso": 77.7,
+      "musloIzq": 70.2,
+      "cintura": 84.2,
+      "cadera": 104.9,
+      "pecho": 91.2
+    },
+    {
+      "fecha": "2026-04-03T04:10:50",
+      "peso": 77.5,
+      "musloIzq": 69.8,
+      "cintura": 84.1,
+      "cadera": 104.4,
+      "pecho": 90.9
+    },
+    {
+      "fecha": "2026-04-04T14:17:02",
+      "peso": 77.4,
+      "musloIzq": 69.3,
+      "cintura": 84,
+      "cadera": 104.5,
+      "pecho": 90.7
+    },
+    {
+      "fecha": "2026-04-05T08:03:13",
+      "peso": 77.4,
+      "musloIzq": 69.7,
+      "cintura": 83.3,
+      "cadera": 104.2,
+      "pecho": 90.9
+    },
+    {
+      "fecha": "2026-04-06T14:24:24",
+      "peso": 77.5,
+      "musloIzq": 68.9,
+      "cintura": 83.6,
+      "cadera": 104,
+      "pecho": 90.8
+    },
+    {
+      "fecha": "2026-04-07T10:00:27",
+      "peso": 77.6,
+      "musloIzq": 69,
+      "cintura": 83.1,
+      "cadera": 103.4,
+      "pecho": 90.7
+    },
+    {
+      "fecha": "2026-04-08T14:14:59",
+      "peso": 76.8,
+      "musloIzq": 68.4,
+      "cintura": 82.7,
+      "cadera": 103.6,
+      "pecho": 91.1
+    },
+    {
+      "fecha": "2026-04-09T10:03:47",
+      "peso": 77.2,
+      "musloIzq": 68.5,
+      "cintura": 82.9,
+      "cadera": 103.4,
+      "pecho": 90.3
+    },
+    {
+      "fecha": "2026-04-10T06:26:40",
+      "peso": 76.7,
+      "musloIzq": 67.8,
+      "cintura": 82.4,
+      "cadera": 103.4,
+      "pecho": 90.3
+    },
+    {
+      "fecha": "2026-04-11T08:06:23",
+      "peso": 76.6,
+      "musloIzq": 67.6,
+      "cintura": 82.2,
+      "cadera": 102.7,
+      "pecho": 90.8
+    },
+    {
+      "fecha": "2026-04-12T04:33:57",
+      "peso": 76.1,
+      "musloIzq": 67.6,
+      "cintura": 81.9,
+      "cadera": 102.6,
+      "pecho": 90.7
+    },
+    {
+      "fecha": "2026-04-13T05:31:18",
+      "peso": 76.3,
+      "musloIzq": 67.3,
+      "cintura": 81.8,
+      "cadera": 102.2,
+      "pecho": 90.1
+    },
+    {
+      "fecha": "2026-04-14T15:55:17",
+      "peso": 76.3,
+      "musloIzq": 67.2,
+      "cintura": 81.9,
+      "cadera": 102.2,
+      "pecho": 90.2
+    },
+    {
+      "fecha": "2026-04-15T04:50:06",
+      "peso": 76,
+      "musloIzq": 66.9,
+      "cintura": 81.1,
+      "cadera": 102,
+      "pecho": 90.1
+    },
+    {
+      "fecha": "2026-04-16T04:18:07",
+      "peso": 76,
+      "musloIzq": 66.7,
+      "cintura": 80.9,
+      "cadera": 101.5,
+      "pecho": 90.6
+    },
+    {
+      "fecha": "2026-04-17T08:08:29",
+      "peso": 75.9,
+      "musloIzq": 66,
+      "cintura": 81.1,
+      "cadera": 101.2,
+      "pecho": 90
+    },
+    {
+      "fecha": "2026-04-18T11:59:54",
+      "peso": 75.6,
+      "musloIzq": 65.7,
+      "cintura": 80.7,
+      "cadera": 101.1,
+      "pecho": 90.5
+    },
+    {
+      "fecha": "2026-04-19T11:47:26",
+      "peso": 75.7,
+      "musloIzq": 66.1,
+      "cintura": 80.3,
+      "cadera": 101,
+      "pecho": 89.8
+    },
+    {
+      "fecha": "2026-04-20T05:16:14",
+      "peso": 75.5,
+      "musloIzq": 65.4,
+      "cintura": 80.5,
+      "cadera": 100.6,
+      "pecho": 90
+    },
+    {
+      "fecha": "2026-04-21T07:14:15",
+      "peso": 75.4,
+      "musloIzq": 65.6,
+      "cintura": 80.5,
+      "cadera": 100.5,
+      "pecho": 90.4
+    },
+    {
+      "fecha": "2026-04-22T08:41:56",
+      "peso": 75.2,
+      "musloIzq": 64.9,
+      "cintura": 79.8,
+      "cadera": 99.8,
+      "pecho": 89.6
+    }
+  ],
+  "jorge": [
+    {
+      "fecha": "2026-01-13T09:03:48",
+      "peso": 95,
+      "musloDer": 74.9,
+      "cintura": 104.8,
+      "cadera": 114.7,
+      "pecho": 110.1
+    },
+    {
+      "fecha": "2026-01-14T10:23:01",
+      "peso": 95,
+      "musloDer": 75.3,
+      "cintura": 104.6,
+      "cadera": 114.9,
+      "pecho": 110.1
+    },
+    {
+      "fecha": "2026-01-15T08:12:45",
+      "peso": 94.6,
+      "musloDer": 74.9,
+      "cintura": 104.9,
+      "cadera": 114.9,
+      "pecho": 110
+    },
+    {
+      "fecha": "2026-01-16T15:50:26",
+      "peso": 94.7,
+      "musloDer": 75,
+      "cintura": 104.3,
+      "cadera": 114.6,
+      "pecho": 109.7
+    },
+    {
+      "fecha": "2026-01-17T07:48:27",
+      "peso": 94.2,
+      "musloDer": 74.4,
+      "cintura": 104.1,
+      "cadera": 114.4,
+      "pecho": 109
+    },
+    {
+      "fecha": "2026-01-18T11:13:56",
+      "peso": 94.2,
+      "musloDer": 74.6,
+      "cintura": 103.9,
+      "cadera": 114.3,
+      "pecho": 109
+    },
+    {
+      "fecha": "2026-01-19T06:02:08",
+      "peso": 93.5,
+      "musloDer": 74.9,
+      "cintura": 103.5,
+      "cadera": 114.2,
+      "pecho": 108.5
+    },
+    {
+      "fecha": "2026-01-20T13:52:37",
+      "peso": 93.9,
+      "musloDer": 74.8,
+      "cintura": 103.2,
+      "cadera": 114.7,
+      "pecho": 108.9
+    },
+    {
+      "fecha": "2026-01-21T06:37:48",
+      "peso": 93.2,
+      "musloDer": 74.2,
+      "cintura": 103.3,
+      "cadera": 114.4,
+      "pecho": 108.7
+    },
+    {
+      "fecha": "2026-01-22T11:42:44",
+      "peso": 93.5,
+      "musloDer": 73.9,
+      "cintura": 103.1,
+      "cadera": 114.2,
+      "pecho": 108.4
+    },
+    {
+      "fecha": "2026-01-23T09:42:33",
+      "peso": 93.1,
+      "musloDer": 73.8,
+      "cintura": 102.8,
+      "cadera": 113.9,
+      "pecho": 108.3
+    },
+    {
+      "fecha": "2026-01-24T10:30:19",
+      "peso": 92.7,
+      "musloDer": 74.2,
+      "cintura": 102.7,
+      "cadera": 114,
+      "pecho": 107.6
+    },
+    {
+      "fecha": "2026-01-25T04:34:26",
+      "peso": 92.7,
+      "musloDer": 73.7,
+      "cintura": 102.4,
+      "cadera": 113.8,
+      "pecho": 107.9
+    },
+    {
+      "fecha": "2026-01-26T10:56:29",
+      "peso": 92.7,
+      "musloDer": 73.7,
+      "cintura": 102.1,
+      "cadera": 113.9,
+      "pecho": 107.5
+    },
+    {
+      "fecha": "2026-01-27T14:59:15",
+      "peso": 92.2,
+      "musloDer": 74.1,
+      "cintura": 102.4,
+      "cadera": 114,
+      "pecho": 107.1
+    },
+    {
+      "fecha": "2026-01-28T09:29:19",
+      "peso": 91.8,
+      "musloDer": 73.5,
+      "cintura": 102.3,
+      "cadera": 113.5,
+      "pecho": 106.9
+    },
+    {
+      "fecha": "2026-01-29T06:02:03",
+      "peso": 92,
+      "musloDer": 73.8,
+      "cintura": 101.9,
+      "cadera": 113.1,
+      "pecho": 106.6
+    },
+    {
+      "fecha": "2026-01-30T07:13:58",
+      "peso": 91.2,
+      "musloDer": 73.5,
+      "cintura": 101.6,
+      "cadera": 113.3,
+      "pecho": 106.3
+    },
+    {
+      "fecha": "2026-01-31T04:17:28",
+      "peso": 91.6,
+      "musloDer": 73.8,
+      "cintura": 101.6,
+      "cadera": 112.9,
+      "pecho": 106.7
+    },
+    {
+      "fecha": "2026-02-01T10:24:33",
+      "peso": 91.3,
+      "musloDer": 73.4,
+      "cintura": 101.5,
+      "cadera": 113,
+      "pecho": 106
+    },
+    {
+      "fecha": "2026-02-02T04:17:57",
+      "peso": 91.1,
+      "musloDer": 73.5,
+      "cintura": 101.3,
+      "cadera": 113.2,
+      "pecho": 106.3
+    },
+    {
+      "fecha": "2026-02-03T14:21:18",
+      "peso": 90.4,
+      "musloDer": 73.4,
+      "cintura": 100.7,
+      "cadera": 112.8,
+      "pecho": 105.4
+    },
+    {
+      "fecha": "2026-02-04T09:37:34",
+      "peso": 90.2,
+      "musloDer": 73,
+      "cintura": 100.2,
+      "cadera": 113.1,
+      "pecho": 105.5
+    },
+    {
+      "fecha": "2026-02-05T07:58:47",
+      "peso": 90.2,
+      "musloDer": 73,
+      "cintura": 100.4,
+      "cadera": 112.3,
+      "pecho": 105.4
+    },
+    {
+      "fecha": "2026-02-06T14:26:50",
+      "peso": 90.5,
+      "musloDer": 73.2,
+      "cintura": 100.4,
+      "cadera": 112.7,
+      "pecho": 105.1
+    },
+    {
+      "fecha": "2026-02-07T05:51:16",
+      "peso": 90.2,
+      "musloDer": 72.6,
+      "cintura": 100.3,
+      "cadera": 112.2,
+      "pecho": 104.8
+    },
+    {
+      "fecha": "2026-02-08T15:53:34",
+      "peso": 90.1,
+      "musloDer": 73.3,
+      "cintura": 99.6,
+      "cadera": 112.4,
+      "pecho": 105
+    },
+    {
+      "fecha": "2026-02-09T14:47:06",
+      "peso": 89.2,
+      "musloDer": 72.9,
+      "cintura": 99.8,
+      "cadera": 112.1,
+      "pecho": 104.8
+    },
+    {
+      "fecha": "2026-02-10T11:57:44",
+      "peso": 89.1,
+      "musloDer": 72.4,
+      "cintura": 99.5,
+      "cadera": 112.5,
+      "pecho": 104.3
+    },
+    {
+      "fecha": "2026-02-11T14:11:48",
+      "peso": 89.5,
+      "musloDer": 72.4,
+      "cintura": 99.5,
+      "cadera": 112.1,
+      "pecho": 104.1
+    },
+    {
+      "fecha": "2026-02-12T08:22:08",
+      "peso": 89,
+      "musloDer": 72.8,
+      "cintura": 99.2,
+      "cadera": 111.6,
+      "pecho": 103.5
+    },
+    {
+      "fecha": "2026-02-13T06:30:04",
+      "peso": 88.8,
+      "musloDer": 72.2,
+      "cintura": 98.6,
+      "cadera": 112,
+      "pecho": 103.6
+    },
+    {
+      "fecha": "2026-02-14T09:39:04",
+      "peso": 88.7,
+      "musloDer": 72.5,
+      "cintura": 98.5,
+      "cadera": 112,
+      "pecho": 103.2
+    },
+    {
+      "fecha": "2026-02-15T06:11:22",
+      "peso": 88,
+      "musloDer": 72.2,
+      "cintura": 98.6,
+      "cadera": 111.5,
+      "pecho": 103.1
+    },
+    {
+      "fecha": "2026-02-16T07:29:25",
+      "peso": 87.8,
+      "musloDer": 71.9,
+      "cintura": 98,
+      "cadera": 111.8,
+      "pecho": 103.3
+    },
+    {
+      "fecha": "2026-02-17T08:05:49",
+      "peso": 87.9,
+      "musloDer": 72.1,
+      "cintura": 98.3,
+      "cadera": 111.7,
+      "pecho": 103.3
+    },
+    {
+      "fecha": "2026-02-18T13:24:55",
+      "peso": 88.1,
+      "musloDer": 72.3,
+      "cintura": 97.3,
+      "cadera": 111.4,
+      "pecho": 103
+    },
+    {
+      "fecha": "2026-02-19T04:55:05",
+      "peso": 87.6,
+      "musloDer": 72,
+      "cintura": 97.2,
+      "cadera": 111.1,
+      "pecho": 102.5
+    },
+    {
+      "fecha": "2026-02-20T10:41:58",
+      "peso": 87,
+      "musloDer": 71.6,
+      "cintura": 97.1,
+      "cadera": 111.2,
+      "pecho": 102.7
+    },
+    {
+      "fecha": "2026-02-21T08:29:51",
+      "peso": 87.4,
+      "musloDer": 72,
+      "cintura": 97.1,
+      "cadera": 111.4,
+      "pecho": 102.1
+    },
+    {
+      "fecha": "2026-02-22T13:20:41",
+      "peso": 87,
+      "musloDer": 72.1,
+      "cintura": 96.9,
+      "cadera": 111.1,
+      "pecho": 102
+    },
+    {
+      "fecha": "2026-02-23T12:24:01",
+      "peso": 86.4,
+      "musloDer": 71.8,
+      "cintura": 96.9,
+      "cadera": 110.6,
+      "pecho": 101.4
+    },
+    {
+      "fecha": "2026-02-24T14:56:49",
+      "peso": 86.5,
+      "musloDer": 71.4,
+      "cintura": 96.9,
+      "cadera": 110.6,
+      "pecho": 101.7
+    },
+    {
+      "fecha": "2026-02-25T04:47:03",
+      "peso": 86.7,
+      "musloDer": 71.4,
+      "cintura": 96.5,
+      "cadera": 110.9,
+      "pecho": 101.3
+    },
+    {
+      "fecha": "2026-02-26T10:58:11",
+      "peso": 86.3,
+      "musloDer": 71.7,
+      "cintura": 96.1,
+      "cadera": 110.3,
+      "pecho": 101.2
+    },
+    {
+      "fecha": "2026-02-27T12:18:19",
+      "peso": 86.2,
+      "musloDer": 71.6,
+      "cintura": 95.6,
+      "cadera": 110.3,
+      "pecho": 100.8
+    },
+    {
+      "fecha": "2026-02-28T07:08:47",
+      "peso": 85.4,
+      "musloDer": 71.2,
+      "cintura": 96.1,
+      "cadera": 110.6,
+      "pecho": 101
+    },
+    {
+      "fecha": "2026-03-01T13:20:27",
+      "peso": 85.6,
+      "musloDer": 71.2,
+      "cintura": 95.4,
+      "cadera": 110.1,
+      "pecho": 100.3
+    },
+    {
+      "fecha": "2026-03-02T12:57:21",
+      "peso": 85,
+      "musloDer": 71.3,
+      "cintura": 95.4,
+      "cadera": 110.4,
+      "pecho": 100.4
+    },
+    {
+      "fecha": "2026-03-03T12:21:24",
+      "peso": 85.3,
+      "musloDer": 70.7,
+      "cintura": 95.4,
+      "cadera": 109.9,
+      "pecho": 99.8
+    },
+    {
+      "fecha": "2026-03-04T13:17:44",
+      "peso": 84.9,
+      "musloDer": 71,
+      "cintura": 94.7,
+      "cadera": 110,
+      "pecho": 100.2
+    },
+    {
+      "fecha": "2026-03-05T09:26:17",
+      "peso": 84.8,
+      "musloDer": 71.2,
+      "cintura": 94.7,
+      "cadera": 109.8,
+      "pecho": 100
+    },
+    {
+      "fecha": "2026-03-06T14:28:58",
+      "peso": 84.6,
+      "musloDer": 71.1,
+      "cintura": 94.1,
+      "cadera": 110,
+      "pecho": 99.6
+    },
+    {
+      "fecha": "2026-03-07T04:05:46",
+      "peso": 84.3,
+      "musloDer": 70.3,
+      "cintura": 94.6,
+      "cadera": 109.4,
+      "pecho": 99.5
+    },
+    {
+      "fecha": "2026-03-08T08:39:09",
+      "peso": 83.9,
+      "musloDer": 70.6,
+      "cintura": 94,
+      "cadera": 109.9,
+      "pecho": 98.7
+    },
+    {
+      "fecha": "2026-03-09T13:16:28",
+      "peso": 84.3,
+      "musloDer": 70.2,
+      "cintura": 93.6,
+      "cadera": 109.5,
+      "pecho": 99
+    },
+    {
+      "fecha": "2026-03-10T05:21:08",
+      "peso": 83.8,
+      "musloDer": 70.7,
+      "cintura": 93.7,
+      "cadera": 109,
+      "pecho": 99
+    },
+    {
+      "fecha": "2026-03-11T14:15:27",
+      "peso": 83.7,
+      "musloDer": 70.2,
+      "cintura": 93.4,
+      "cadera": 108.9,
+      "pecho": 98.9
+    },
+    {
+      "fecha": "2026-03-12T07:48:54",
+      "peso": 83.5,
+      "musloDer": 70.3,
+      "cintura": 93.1,
+      "cadera": 109,
+      "pecho": 97.9
+    },
+    {
+      "fecha": "2026-03-13T06:53:25",
+      "peso": 83.4,
+      "musloDer": 70.3,
+      "cintura": 93.4,
+      "cadera": 109.2,
+      "pecho": 97.9
+    },
+    {
+      "fecha": "2026-03-14T05:44:17",
+      "peso": 83,
+      "musloDer": 70.1,
+      "cintura": 92.6,
+      "cadera": 108.8,
+      "pecho": 98
+    },
+    {
+      "fecha": "2026-03-15T12:54:55",
+      "peso": 82.6,
+      "musloDer": 70,
+      "cintura": 92.7,
+      "cadera": 109,
+      "pecho": 97.6
+    },
+    {
+      "fecha": "2026-03-16T07:41:17",
+      "peso": 82.9,
+      "musloDer": 69.8,
+      "cintura": 92.1,
+      "cadera": 108.4,
+      "pecho": 97.6
+    },
+    {
+      "fecha": "2026-03-17T05:23:05",
+      "peso": 81.9,
+      "musloDer": 70.1,
+      "cintura": 92.6,
+      "cadera": 108.9,
+      "pecho": 97.6
+    },
+    {
+      "fecha": "2026-03-18T06:05:35",
+      "peso": 82.2,
+      "musloDer": 70.2,
+      "cintura": 92.2,
+      "cadera": 108.7,
+      "pecho": 97.2
+    },
+    {
+      "fecha": "2026-03-19T10:59:59",
+      "peso": 81.5,
+      "musloDer": 69.5,
+      "cintura": 92.2,
+      "cadera": 108.3,
+      "pecho": 96.9
+    },
+    {
+      "fecha": "2026-03-20T15:14:38",
+      "peso": 81.4,
+      "musloDer": 69.4,
+      "cintura": 92,
+      "cadera": 108.1,
+      "pecho": 97
+    },
+    {
+      "fecha": "2026-03-21T14:54:05",
+      "peso": 81.1,
+      "musloDer": 69.5,
+      "cintura": 91.6,
+      "cadera": 108.5,
+      "pecho": 96.4
+    },
+    {
+      "fecha": "2026-03-22T11:47:53",
+      "peso": 81,
+      "musloDer": 69.6,
+      "cintura": 91.2,
+      "cadera": 108.2,
+      "pecho": 96
+    },
+    {
+      "fecha": "2026-03-23T09:21:08",
+      "peso": 81.1,
+      "musloDer": 69.8,
+      "cintura": 91,
+      "cadera": 107.6,
+      "pecho": 95.8
+    },
+    {
+      "fecha": "2026-03-24T15:26:05",
+      "peso": 80.5,
+      "musloDer": 69.7,
+      "cintura": 90.7,
+      "cadera": 108.3,
+      "pecho": 95.6
+    },
+    {
+      "fecha": "2026-03-25T12:20:13",
+      "peso": 80.5,
+      "musloDer": 69.6,
+      "cintura": 90.3,
+      "cadera": 108.1,
+      "pecho": 95.9
+    },
+    {
+      "fecha": "2026-03-26T11:56:05",
+      "peso": 80.6,
+      "musloDer": 69.5,
+      "cintura": 90.5,
+      "cadera": 107.4,
+      "pecho": 95.8
+    },
+    {
+      "fecha": "2026-03-27T11:18:37",
+      "peso": 80.5,
+      "musloDer": 69.4,
+      "cintura": 89.9,
+      "cadera": 107.8,
+      "pecho": 95.3
+    },
+    {
+      "fecha": "2026-03-28T08:36:37",
+      "peso": 80.4,
+      "musloDer": 69.4,
+      "cintura": 89.8,
+      "cadera": 107.9,
+      "pecho": 95.2
+    },
+    {
+      "fecha": "2026-03-29T13:07:00",
+      "peso": 79.9,
+      "musloDer": 68.6,
+      "cintura": 89.5,
+      "cadera": 107.5,
+      "pecho": 94.9
+    },
+    {
+      "fecha": "2026-03-30T09:46:07",
+      "peso": 79.7,
+      "musloDer": 68.8,
+      "cintura": 90,
+      "cadera": 107.2,
+      "pecho": 94.3
+    },
+    {
+      "fecha": "2026-03-31T05:42:14",
+      "peso": 79.4,
+      "musloDer": 68.6,
+      "cintura": 89.3,
+      "cadera": 106.8,
+      "pecho": 94.6
+    },
+    {
+      "fecha": "2026-04-01T12:11:01",
+      "peso": 79.6,
+      "musloDer": 68.7,
+      "cintura": 89.6,
+      "cadera": 107.1,
+      "pecho": 93.9
+    },
+    {
+      "fecha": "2026-04-02T04:32:30",
+      "peso": 79.4,
+      "musloDer": 68.8,
+      "cintura": 88.9,
+      "cadera": 107.1,
+      "pecho": 93.8
+    },
+    {
+      "fecha": "2026-04-03T04:10:50",
+      "peso": 78.9,
+      "musloDer": 68.7,
+      "cintura": 89,
+      "cadera": 106.6,
+      "pecho": 94
+    },
+    {
+      "fecha": "2026-04-04T14:17:02",
+      "peso": 78.4,
+      "musloDer": 68.3,
+      "cintura": 88.6,
+      "cadera": 106.8,
+      "pecho": 93.4
+    },
+    {
+      "fecha": "2026-04-05T08:03:13",
+      "peso": 78.1,
+      "musloDer": 68.4,
+      "cintura": 88.1,
+      "cadera": 106.6,
+      "pecho": 93.8
+    },
+    {
+      "fecha": "2026-04-06T14:24:24",
+      "peso": 78.3,
+      "musloDer": 68.4,
+      "cintura": 88,
+      "cadera": 106.6,
+      "pecho": 93.3
+    },
+    {
+      "fecha": "2026-04-07T10:00:27",
+      "peso": 78.2,
+      "musloDer": 68.1,
+      "cintura": 88.4,
+      "cadera": 106.3,
+      "pecho": 93.3
+    },
+    {
+      "fecha": "2026-04-08T14:14:59",
+      "peso": 77.8,
+      "musloDer": 68.5,
+      "cintura": 88,
+      "cadera": 106.8,
+      "pecho": 93.2
+    },
+    {
+      "fecha": "2026-04-09T10:03:47",
+      "peso": 77.8,
+      "musloDer": 68.2,
+      "cintura": 87.7,
+      "cadera": 106.3,
+      "pecho": 92.6
+    },
+    {
+      "fecha": "2026-04-10T06:26:40",
+      "peso": 77.4,
+      "musloDer": 67.8,
+      "cintura": 87.3,
+      "cadera": 106.2,
+      "pecho": 92.8
+    },
+    {
+      "fecha": "2026-04-11T08:06:23",
+      "peso": 77.4,
+      "musloDer": 67.8,
+      "cintura": 87.5,
+      "cadera": 105.7,
+      "pecho": 92.5
+    },
+    {
+      "fecha": "2026-04-12T04:33:57",
+      "peso": 76.8,
+      "musloDer": 68,
+      "cintura": 87,
+      "cadera": 106.3,
+      "pecho": 92
+    },
+    {
+      "fecha": "2026-04-13T05:31:18",
+      "peso": 76.9,
+      "musloDer": 68,
+      "cintura": 86.7,
+      "cadera": 105.7,
+      "pecho": 91.8
+    },
+    {
+      "fecha": "2026-04-14T15:55:17",
+      "peso": 77,
+      "musloDer": 67.6,
+      "cintura": 86.3,
+      "cadera": 105.5,
+      "pecho": 91.4
+    },
+    {
+      "fecha": "2026-04-15T04:50:06",
+      "peso": 76.7,
+      "musloDer": 67.4,
+      "cintura": 86.6,
+      "cadera": 105.4,
+      "pecho": 91.8
+    },
+    {
+      "fecha": "2026-04-16T04:18:07",
+      "peso": 76.3,
+      "musloDer": 67.3,
+      "cintura": 85.8,
+      "cadera": 105.3,
+      "pecho": 91.2
+    },
+    {
+      "fecha": "2026-04-17T08:08:29",
+      "peso": 76,
+      "musloDer": 67.3,
+      "cintura": 86.2,
+      "cadera": 105.6,
+      "pecho": 90.9
+    },
+    {
+      "fecha": "2026-04-18T11:59:54",
+      "peso": 75.7,
+      "musloDer": 67.3,
+      "cintura": 86,
+      "cadera": 105.1,
+      "pecho": 90.6
+    },
+    {
+      "fecha": "2026-04-19T11:47:26",
+      "peso": 75.8,
+      "musloDer": 67,
+      "cintura": 86,
+      "cadera": 105.2,
+      "pecho": 90.7
+    },
+    {
+      "fecha": "2026-04-20T05:16:14",
+      "peso": 75.2,
+      "musloDer": 67,
+      "cintura": 85.5,
+      "cadera": 105.1,
+      "pecho": 90.1
+    },
+    {
+      "fecha": "2026-04-21T07:14:15",
+      "peso": 74.9,
+      "musloDer": 67.1,
+      "cintura": 85.4,
+      "cadera": 105.1,
+      "pecho": 89.8
+    },
+    {
+      "fecha": "2026-04-22T08:41:56",
+      "peso": 75.3,
+      "musloDer": 67,
+      "cintura": 84.7,
+      "cadera": 105.1,
+      "pecho": 89.8
+    }
+  ]
+}

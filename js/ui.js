@@ -1,8 +1,3 @@
-/* =============================================
-   js/ui.js — Capa de presentación
-   Renderizado de tablas, gráficas, toasts y sync
-   ============================================= */
-
 'use strict';
 
 const UI = (() => {
@@ -15,35 +10,28 @@ const UI = (() => {
         el.textContent = msg;
         el.className = `toast show toast-${type}`;
         clearTimeout(_toastTimer);
-        _toastTimer = setTimeout(() => {
-            el.classList.remove('show');
-        }, 3200);
+        _toastTimer = setTimeout(() => el.classList.remove('show'), 3200);
     }
 
     // ─── Sync Status ───────────────────────────
     function setSyncStatus(status) {
         const el = document.getElementById('sync-status');
         if (!el) return;
-        const states = {
-            offline: { cls: 'sync-offline', icon: '🟡', text: 'Sin Gist' },
-            syncing: { cls: 'sync-syncing', icon: '🔄', text: 'Sincronizando' },
-            synced:  { cls: 'sync-synced',  icon: '🟢', text: 'Sincronizado' },
-            error:   { cls: 'sync-error',   icon: '🔴', text: 'Error Gist' },
-        };
-        const s = states[status] || states.offline;
-        el.className = `sync-status ${s.cls}`;
-        el.innerHTML = `<span class="sync-icon">${s.icon}</span><span class="sync-text">${s.text}</span>`;
+        const s = {
+            offline: ['sync-offline', '🟡', 'Sin Gist'],
+            syncing: ['sync-syncing', '🔄', 'Sincronizando'],
+            synced: ['sync-synced', '🟢', 'Sincronizado'],
+            error: ['sync-error', '🔴', 'Error Gist'],
+        }[status] || ['sync-offline', '🟡', 'Sin Gist'];
+        el.className = `sync-status ${s[0]}`;
+        el.innerHTML = `<span class="sync-icon">${s[1]}</span><span class="sync-text">${s[2]}</span>`;
     }
 
-    // ─── Pre-sync Loader ───────────────────────
-    function showPreSyncLoader() {
-        document.documentElement.classList.add('is-sync-loading');
-    }
-
+    function showPreSyncLoader() { document.documentElement.classList.add('is-sync-loading'); }
     function hidePreSyncLoader() {
         const el = document.getElementById('pre-sync-loader');
         if (!el) return;
-        el.style.transition = 'opacity 0.4s ease';
+        el.style.transition = 'opacity .4s ease';
         el.style.opacity = '0';
         setTimeout(() => {
             document.documentElement.classList.remove('is-sync-loading');
@@ -52,158 +40,328 @@ const UI = (() => {
         }, 420);
     }
 
-    // ─── Format date ───────────────────────────
-    function fmtDate(iso) {
+    // ─── Helpers ───────────────────────────────
+    function fmtDate(iso, includeTime = false) {
         if (!iso) return '—';
-        const d = new Date(iso + 'T12:00:00');
-        return d.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: '2-digit' });
+        const hasTime = iso.includes('T');
+        const d = new Date(hasTime ? iso : iso + 'T12:00:00');
+        const opts = { day: '2-digit', month: '2-digit', year: '2-digit' };
+        if (hasTime && includeTime) {
+            opts.hour = '2-digit'; opts.minute = '2-digit'; opts.second = '2-digit';
+            return d.toLocaleString('es-ES', opts).replace(',', '');
+        }
+        return d.toLocaleDateString('es-ES', opts);
     }
 
-    // ─── Format number ─────────────────────────
-    function fmtN(val, decimals = 1) {
+    function fmtN(val, dec = 1) {
         if (val === null || val === undefined || val === '') return '—';
         const n = parseFloat(val);
-        if (isNaN(n)) return '—';
-        return n.toLocaleString('es-ES', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+        return isNaN(n) ? '—' : n.toLocaleString('es-ES', { minimumFractionDigits: dec, maximumFractionDigits: dec });
     }
 
-    // ─── Diff badge ────────────────────────────
-    function diffBadge(curr, prev, lowerIsBetter = true) {
-        if (prev === null || curr === null) return '';
+    function diffHtml(curr, prev) {
+        if (prev === null || curr === null || isNaN(parseFloat(curr)) || isNaN(parseFloat(prev))) return '';
         const d = parseFloat(curr) - parseFloat(prev);
-        if (isNaN(d) || d === 0) return '';
-        const good = lowerIsBetter ? d < 0 : d > 0;
-        const cls = good ? 'diff-good' : 'diff-bad';
-        const sign = d > 0 ? '+' : '';
-        return `<span class="stat-diff ${cls}">${sign}${fmtN(d, 1)}</span>`;
+        if (d === 0) return '';
+        const cls = d < 0 ? 'diff-good' : 'diff-bad';
+        const arrow = d < 0 ? '▼' : '▲';
+        return `<span class="stat-card-diff ${cls}">${arrow} ${Math.abs(d).toLocaleString('es-ES', { minimumFractionDigits: 1, maximumFractionDigits: 1 })}</span>`;
     }
 
-    // ─── Stats Row ────────────────────────────
+    // ─── Stats Cards ────────────────────────────
     function renderStats(person, entries) {
         const el = document.getElementById(`stats-${person}`);
         if (!el) return;
+        if (!entries || entries.length === 0) { el.innerHTML = ''; return; }
 
-        if (!entries || entries.length === 0) {
-            el.style.display = 'none';
-            return;
-        }
-        el.style.display = 'flex';
-
-        const latest = entries[entries.length - 1];
-        const prev = entries.length > 1 ? entries[entries.length - 2] : null;
-        const first = entries[0];
-
-        const colorCls = person === 'gema' ? 'gema-color' : 'jorge-color';
+        const sorted = [...entries].sort((a, b) => a.fecha.localeCompare(b.fecha));
+        const last = sorted[sorted.length - 1];
+        const prev = sorted.length > 1 ? sorted[sorted.length - 2] : null;
+        const first = sorted[0];
         const keyField = person === 'gema' ? 'musloIzq' : 'musloDer';
+        const keyLabel = person === 'gema' ? 'Muslo Izq.' : 'Muslo Der.';
 
-        const statData = [
-            {
-                label: 'Peso actual',
-                val: fmtN(latest.peso, 1) + ' kg',
-                diff: prev ? diffBadge(latest.peso, prev.peso) : '',
-            },
-            {
-                label: person === 'gema' ? 'Muslo Izq.' : 'Muslo Der.',
-                val: fmtN(latest[keyField], 1) + ' cm',
-                diff: prev ? diffBadge(latest[keyField], prev[keyField]) : '',
-            },
-            {
-                label: 'Cintura',
-                val: fmtN(latest.cintura, 1) + ' cm',
-                diff: prev ? diffBadge(latest.cintura, prev.cintura) : '',
-            },
-            {
-                label: 'Total entradas',
-                val: entries.length,
-                diff: '',
-            },
+        let pesoDelta = null;
+        if (sorted.length > 1 && !isNaN(parseFloat(last.peso)) && !isNaN(parseFloat(first.peso)))
+            pesoDelta = parseFloat(last.peso) - parseFloat(first.peso);
+
+        const cards = [
+            { label: 'Peso actual', val: fmtN(last.peso) + ' kg', diff: prev ? diffHtml(last.peso, prev.peso) : '', cls: `card-key-${person}` },
+            { label: keyLabel, val: fmtN(last[keyField]) + ' cm', diff: prev ? diffHtml(last[keyField], prev[keyField]) : '' },
+            { label: 'Cintura', val: fmtN(last.cintura) + ' cm', diff: prev ? diffHtml(last.cintura, prev.cintura) : '' },
+            { label: 'Cadera', val: fmtN(last.cadera) + ' cm', diff: prev ? diffHtml(last.cadera, prev.cadera) : '' },
+            { label: 'Pecho', val: fmtN(last.pecho) + ' cm', diff: prev ? diffHtml(last.pecho, prev.pecho) : '' },
+            { label: 'Entradas', val: entries.length, diff: '' },
         ];
 
-        if (entries.length > 1) {
-            const pesoTotal = parseFloat(latest.peso) - parseFloat(first.peso);
-            if (!isNaN(pesoTotal)) {
-                statData.push({
-                    label: 'Δ Peso total',
-                    val: (pesoTotal > 0 ? '+' : '') + fmtN(pesoTotal, 1) + ' kg',
-                    diff: '',
-                });
-            }
+        if (pesoDelta !== null) {
+            const sign = pesoDelta > 0 ? '+' : '';
+            const cls = pesoDelta < 0 ? 'card-good' : 'card-bad';
+            cards.push({ label: 'Δ Peso total', val: sign + fmtN(pesoDelta) + ' kg', diff: '', cls });
         }
 
-        el.innerHTML = statData.map(s => `
-            <div class="stat-item">
-                <span class="stat-label">${s.label}</span>
-                <span class="stat-value ${colorCls}">${s.val} ${s.diff}</span>
+        el.innerHTML = cards.map((c, i) => `
+            <div class="stat-card ${c.cls || ''}" style="animation-delay:${i * 0.04}s">
+                <span class="stat-card-label">${c.label}</span>
+                <span class="stat-card-value">${c.val}</span>
+                ${c.diff || ''}
             </div>
         `).join('');
     }
 
-    // ─── Progress Bars ─────────────────────────
-    function renderProgressBars(person, entries) {
-        const el = document.getElementById(`progress-${person}`);
-        if (!el) return;
+    // ─── Chart instances ────────────────────────
+    const _charts = {};          // key: `${person}-${chartId}`
+    const _chartTypes = {};      // key: `${person}-${chartId}` → 'line'|'bar'
+    const _chartVisibility = {}; // key: person → { field: bool }
 
-        if (!entries || entries.length < 2) {
-            el.style.display = 'none';
-            return;
-        }
+    function _chartKey(person, chartId) { return `${person}-${chartId}`; }
 
-        const keyField = person === 'gema' ? 'musloIzq' : 'musloDer';
-        const fillCls = person === 'gema' ? 'fill-gema' : 'fill-jorge';
-
-        const first = entries[0];
-        const latest = entries[entries.length - 1];
-
-        const metrics = [
-            { label: person === 'gema' ? 'Muslo Izq.' : 'Muslo Der.', field: keyField },
-            { label: 'Cintura', field: 'cintura' },
-            { label: 'Cadera', field: 'cadera' },
-            { label: 'Pecho', field: 'pecho' },
-            { label: 'Peso (kg)', field: 'peso' },
-        ];
-
-        const items = metrics.filter(m => {
-            const f = parseFloat(first[m.field]);
-            const l = parseFloat(latest[m.field]);
-            return !isNaN(f) && !isNaN(l);
+    function resizeChart(person) {
+        ['peso', 'medidas'].forEach(id => {
+            const c = _charts[_chartKey(person, id)];
+            if (c) c.resize();
         });
+    }
 
-        if (items.length === 0) {
-            el.style.display = 'none';
-            return;
+    // ─── Chart.js shared config ─────────────────
+    function _isDark() { return document.documentElement.getAttribute('data-theme') !== 'light'; }
+    function _gridColor() { return _isDark() ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.07)'; }
+    function _tickColor() { return _isDark() ? 'rgba(255,255,255,0.35)' : 'rgba(0,0,0,0.45)'; }
+
+    function _tooltipConfig() {
+        const dark = _isDark();
+        return {
+            backgroundColor: dark ? '#1a2540' : '#ffffff',
+            titleColor: dark ? '#f1f5f9' : '#0f172a',
+            bodyColor: dark ? '#94a3b8' : '#475569',
+            borderColor: dark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)',
+            borderWidth: 1, padding: 12, cornerRadius: 10,
+        };
+    }
+
+    function _scalesConfig(unit) {
+        return {
+            x: {
+                grid: { color: _gridColor() },
+                ticks: { color: _tickColor(), font: { size: 11, family: 'Inter' }, maxRotation: 45 },
+            },
+            y: {
+                grid: { color: _gridColor() },
+                ticks: {
+                    color: _tickColor(),
+                    font: { size: 11, family: 'Inter' },
+                    callback: v => v + (unit ? ` ${unit}` : ''),
+                },
+            },
+        };
+    }
+
+    function _emptyOverlay(canvasParent, msg) {
+        const old = canvasParent.querySelector('.chart-empty-overlay');
+        if (old) old.remove();
+        if (!msg) return;
+        const o = document.createElement('div');
+        o.className = 'chart-empty-overlay';
+        o.innerHTML = `<span>${msg}</span>`;
+        canvasParent.style.position = 'relative';
+        canvasParent.appendChild(o);
+    }
+
+    // ─── PESO CHART ────────────────────────────
+    const PESO_COLOR = '#10b981';
+
+    function _buildPesoChart(person, sorted, type = 'line') {
+        const key = _chartKey(person, 'peso');
+        const canvas = document.getElementById(`canvas-peso-${person}`);
+        if (!canvas || typeof Chart === 'undefined') return;
+
+        if (_charts[key]) { _charts[key].destroy(); delete _charts[key]; }
+
+        const labels = sorted.map(e => fmtDate(e.fecha));
+        const data = sorted.map(e => { const v = parseFloat(e.peso); return isNaN(v) ? null : v; });
+        const hasData = data.some(v => v !== null);
+
+        _emptyOverlay(canvas.parentElement, hasData ? null : 'Añade datos de peso para ver la gráfica');
+        if (!hasData) return;
+
+        _charts[key] = new Chart(canvas, {
+            type,
+            data: {
+                labels,
+                datasets: [{
+                    label: 'Peso (kg)',
+                    data,
+                    borderColor: PESO_COLOR,
+                    backgroundColor: type === 'bar' ? PESO_COLOR + '55' : PESO_COLOR + '18',
+                    pointBackgroundColor: PESO_COLOR,
+                    pointRadius: sorted.length > 10 ? 3 : 5,
+                    pointHoverRadius: 7,
+                    tension: 0.35,
+                    fill: type === 'line',
+                    spanGaps: true,
+                    borderRadius: type === 'bar' ? 6 : 0,
+                }],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { mode: 'index', intersect: false },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        ...(_tooltipConfig()),
+                        callbacks: { label: ctx => ` ${ctx.parsed.y?.toLocaleString('es-ES', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} kg` },
+                    },
+                },
+                scales: _scalesConfig('kg'),
+                animation: { duration: 500, easing: 'easeInOutQuart' },
+            },
+        });
+    }
+
+    // ─── MEDIDAS CHART ──────────────────────────
+    const MEDIDAS_DEFS = [
+        { field: 'musloIzq', label: 'Muslo Izq.', color: '#ec4899', persons: ['gema'] },
+        { field: 'musloDer', label: 'Muslo Der.', color: '#3b82f6', persons: ['jorge'] },
+        { field: 'cintura', label: 'Cintura', color: '#f59e0b', persons: ['gema', 'jorge'] },
+        { field: 'cadera', label: 'Cadera', color: '#8b5cf6', persons: ['gema', 'jorge'] },
+        { field: 'pecho', label: 'Pecho', color: '#06b6d4', persons: ['gema', 'jorge'] },
+    ];
+
+    function _buildMedidasChart(person, sorted, type = 'line') {
+        const key = _chartKey(person, 'medidas');
+        const canvas = document.getElementById(`canvas-medidas-${person}`);
+        if (!canvas || typeof Chart === 'undefined') return;
+
+        if (_charts[key]) { _charts[key].destroy(); delete _charts[key]; }
+
+        if (!_chartVisibility[person]) {
+            _chartVisibility[person] = {};
+            MEDIDAS_DEFS.filter(d => d.persons.includes(person)).forEach(d => _chartVisibility[person][d.field] = true);
         }
 
-        el.style.display = 'block';
-        el.innerHTML = `<p class="progress-title">Progreso desde inicio</p>` + items.map(m => {
-            const f = parseFloat(first[m.field]);
-            const l = parseFloat(latest[m.field]);
-            const diff = l - f;
-            const pct = f > 0 ? Math.max(0, Math.min(100, Math.abs(diff) / f * 100 * 5)) : 0;
-            const sign = diff > 0 ? '+' : '';
-            const diffCls = diff <= 0 ? 'diff-good' : 'diff-bad';
-            return `
-                <div class="progress-item">
-                    <span class="progress-label">${m.label}</span>
-                    <div class="progress-bar-track">
-                        <div class="progress-bar-fill ${fillCls}" style="width:${pct}%"></div>
-                    </div>
-                    <span class="progress-val ${diffCls}">${sign}${fmtN(diff, 1)}</span>
-                </div>
-            `;
+        const labels = sorted.map(e => fmtDate(e.fecha));
+        const defs = MEDIDAS_DEFS.filter(d => d.persons.includes(person));
+        const hasData = sorted.length > 0;
+
+        _emptyOverlay(canvas.parentElement, hasData ? null : 'Añade medidas para ver la gráfica');
+        if (!hasData) return;
+
+        const datasets = defs.map(d => ({
+            label: d.label,
+            data: sorted.map(e => { const v = parseFloat(e[d.field]); return isNaN(v) ? null : v; }),
+            borderColor: d.color,
+            backgroundColor: type === 'bar' ? d.color + '55' : d.color + '18',
+            pointBackgroundColor: d.color,
+            pointRadius: sorted.length > 10 ? 3 : 5,
+            pointHoverRadius: 7,
+            tension: 0.35,
+            fill: false,
+            spanGaps: true,
+            borderRadius: type === 'bar' ? 4 : 0,
+            hidden: !_chartVisibility[person][d.field],
+        }));
+
+        _charts[key] = new Chart(canvas, {
+            type,
+            data: { labels, datasets },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: { mode: 'index', intersect: false },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        ...(_tooltipConfig()),
+                        callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y?.toLocaleString('es-ES', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) ?? '—'} cm` },
+                    },
+                },
+                scales: _scalesConfig('cm'),
+                animation: { duration: 500, easing: 'easeInOutQuart' },
+            },
+        });
+    }
+
+    // ─── Toggle individual dataset (medidas) ────
+    function toggleDataset(person, field, color, btn) {
+        const key = _chartKey(person, 'medidas');
+        if (!_charts[key]) return;
+        if (!_chartVisibility[person]) _chartVisibility[person] = {};
+        const vis = !(_chartVisibility[person][field] !== false);
+        _chartVisibility[person][field] = vis;
+
+        const chart = _charts[key];
+        const dsIdx = chart.data.datasets.findIndex(d => {
+            const def = MEDIDAS_DEFS.find(dd => dd.field === field);
+            return def && d.label === def.label;
+        });
+        if (dsIdx >= 0) { chart.data.datasets[dsIdx].hidden = !vis; chart.update(); }
+
+        btn.classList.toggle('active', vis);
+        btn.style.background = vis ? color + '22' : '';
+        btn.style.borderColor = vis ? color + '66' : '';
+        btn.style.color = vis ? color : '';
+    }
+
+    // ─── Switch chart type (line ↔ bar) ─────────
+    function switchChartType(person, chartId, type, btn) {
+        const key = _chartKey(person, chartId);
+        _chartTypes[key] = type;
+
+        // Update button active state in the switcher
+        const switcherEl = btn.closest('.chart-type-switcher');
+        if (switcherEl) {
+            switcherEl.querySelectorAll('.chart-type-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        // Rebuild the appropriate chart
+        const currentEntries = _currentEntries[person] || [];
+        const sorted = [...currentEntries].sort((a, b) => a.fecha.localeCompare(b.fecha));
+        if (chartId === 'peso') {
+            _buildPesoChart(person, sorted, type);
+        } else {
+            _buildMedidasChart(person, sorted, type);
+            _buildMedidasToggles(person);
+        }
+    }
+
+    // ─── Toggle buttons (medidas) ───────────────
+    function _buildMedidasToggles(person) {
+        const container = document.getElementById(`chart-toggles-${person}`);
+        if (!container) return;
+        const defs = MEDIDAS_DEFS.filter(d => d.persons.includes(person));
+        container.innerHTML = defs.map(d => {
+            const active = _chartVisibility[person]?.[d.field] !== false ? 'active' : '';
+            return `<button class="chart-toggle-btn ${active}" data-person="${person}" data-field="${d.field}"
+                style="${active ? `background:${d.color}22;border-color:${d.color}66;color:${d.color}` : ''}"
+                onclick="UI.toggleDataset('${person}','${d.field}','${d.color}',this)">
+                <span class="dot" style="background:${d.color}"></span>${d.label}
+            </button>`;
         }).join('');
     }
 
-    // ─── Render table ──────────────────────────
+    // ─── Cache of current entries (for chart type switch) ─
+    const _currentEntries = {};
+
+    // ─── Main render ────────────────────────────
     function renderTable(person, entries) {
         const tbody = document.getElementById(`tbody-${person}`);
         const empty = document.getElementById(`empty-${person}`);
         const tableWrapper = document.getElementById(`table-wrapper-${person}`);
         if (!tbody) return;
 
-        const keyField = person === 'gema' ? 'musloIzq' : 'musloDer';
-        const keyLabel = person === 'gema' ? 'Muslo Izq.' : 'Muslo Der.';
-        const badgeCls = `badge-latest-${person}`;
-        const colHighlight = `col-highlight-${person}`;
+        _currentEntries[person] = entries || [];
+
+        const sorted = [...(entries || [])].sort((a, b) => a.fecha.localeCompare(b.fecha));
+
+        const typePeso = _chartTypes[_chartKey(person, 'peso')] || 'line';
+        const typeMedidas = _chartTypes[_chartKey(person, 'medidas')] || 'line';
+
+        // Always render both charts
+        _buildPesoChart(person, sorted, typePeso);
+        _buildMedidasToggles(person);
+        _buildMedidasChart(person, sorted, typeMedidas);
 
         if (!entries || entries.length === 0) {
             if (empty) empty.style.display = 'flex';
@@ -214,145 +372,36 @@ const UI = (() => {
         if (empty) empty.style.display = 'none';
         if (tableWrapper) tableWrapper.style.display = 'block';
 
-        const sorted = [...entries].sort((a, b) => a.fecha.localeCompare(b.fecha));
-        const latestDate = sorted[sorted.length - 1].fecha;
+        const keyField = person === 'gema' ? 'musloIzq' : 'musloDer';
+        const tdKeyCls = `td-key-${person}`;
+        const badgeCls = person;
+        const latestFecha = sorted[sorted.length - 1].fecha;
 
-        tbody.innerHTML = sorted.map((e, i) => {
-            const isLatest = e.fecha === latestDate;
-            const prev = i > 0 ? sorted[i - 1] : null;
-            return `
-            <tr class="${isLatest ? 'latest-row' : ''}">
-                <td>
-                    ${fmtDate(e.fecha)}
-                    ${isLatest ? `<span class="badge-latest ${badgeCls}">Último</span>` : ''}
-                </td>
-                <td>${fmtN(e.peso, 1)}</td>
-                <td class="${colHighlight}"><strong>${fmtN(e[keyField], 1)}</strong></td>
-                <td>${fmtN(e.cintura, 1)}</td>
-                <td>${fmtN(e.cadera, 1)}</td>
-                <td>${fmtN(e.pecho, 1)}</td>
-                <td class="td-actions">
-                    <button class="btn-icon btn-danger" title="Eliminar entrada"
-                        onclick="App.deleteEntry('${person}', '${e.fecha}')">
-                        <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M3 6H5H21M8 6V4C8 3.47 8.21 2.96 8.59 2.59C8.96 2.21 9.47 2 10 2H14C14.53 2 15.04 2.21 15.41 2.59C15.79 2.96 16 3.47 16 4V6M19 6V20C19 20.53 18.79 21.04 18.41 21.41C18.04 21.79 17.53 22 17 22H7C6.47 22 5.96 21.79 5.59 21.41C5.21 21.04 5 20.53 5 20V6H19Z"
-                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+        tbody.innerHTML = [...sorted].reverse().map(e => `
+            <tr class="${e.fecha === latestFecha ? 'latest-row' : ''}">
+                <td>${fmtDate(e.fecha, true)}${e.fecha === latestFecha ? `<span class="badge-latest badge-${badgeCls}">Último</span>` : ''}</td>
+                <td class="${tdKeyCls}">${fmtN(e.peso)}</td>
+                <td>${fmtN(e[keyField])}</td>
+                <td>${fmtN(e.cintura)}</td>
+                <td>${fmtN(e.cadera)}</td>
+                <td>${fmtN(e.pecho)}</td>
+                <td style="text-align:center; white-space:nowrap">
+                    <button class="btn-icon btn-edit" title="Editar" onclick="App.editEntry('${person}','${e.fecha}')">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <button class="btn-icon btn-danger" title="Eliminar" onclick="App.deleteEntry('${person}','${e.fecha}')">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M3 6h18M8 6V4h8v2M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </button>
                 </td>
             </tr>
-            `;
-        }).join('');
-    }
-
-    // ─── Render chart (lightweight sparkline) ──
-    function renderChart(person, entries) {
-        const canvas = document.getElementById(`chart-${person}`);
-        if (!canvas) return;
-
-        const ctx = canvas.getContext('2d');
-        const sorted = [...entries].sort((a, b) => a.fecha.localeCompare(b.fecha));
-
-        if (sorted.length < 2) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            return;
-        }
-
-        const keyField = person === 'gema' ? 'musloIzq' : 'musloDer';
-        const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
-
-        const datasets = [
-            { field: keyField, color: person === 'gema' ? '#ec4899' : '#3b82f6', label: person === 'gema' ? 'Muslo Izq.' : 'Muslo Der.' },
-            { field: 'cintura', color: '#f59e0b', label: 'Cintura' },
-            { field: 'peso', color: '#10b981', label: 'Peso' },
-        ];
-
-        const W = canvas.offsetWidth || 400;
-        const H = 160;
-        canvas.width = W;
-        canvas.height = H;
-
-        const PAD = { top: 16, right: 16, bottom: 32, left: 40 };
-        const plotW = W - PAD.left - PAD.right;
-        const plotH = H - PAD.top - PAD.bottom;
-
-        ctx.clearRect(0, 0, W, H);
-
-        // Grid
-        ctx.strokeStyle = isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.06)';
-        ctx.lineWidth = 1;
-        for (let g = 0; g <= 4; g++) {
-            const y = PAD.top + (plotH / 4) * g;
-            ctx.beginPath();
-            ctx.moveTo(PAD.left, y);
-            ctx.lineTo(PAD.left + plotW, y);
-            ctx.stroke();
-        }
-
-        // X axis labels (dates)
-        ctx.fillStyle = isDark ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.4)';
-        ctx.font = '10px Inter, sans-serif';
-        ctx.textAlign = 'center';
-        const step = Math.max(1, Math.floor(sorted.length / 5));
-        sorted.forEach((e, i) => {
-            if (i % step === 0 || i === sorted.length - 1) {
-                const x = PAD.left + (i / (sorted.length - 1)) * plotW;
-                ctx.fillText(fmtDate(e.fecha), x, H - 8);
-            }
-        });
-
-        // Draw each line
-        datasets.forEach(ds => {
-            const vals = sorted.map(e => {
-                const v = parseFloat(e[ds.field]);
-                return isNaN(v) ? null : v;
-            });
-            const nonNull = vals.filter(v => v !== null);
-            if (nonNull.length < 2) return;
-
-            const minV = Math.min(...nonNull);
-            const maxV = Math.max(...nonNull);
-            const range = maxV - minV || 1;
-
-            ctx.beginPath();
-            ctx.strokeStyle = ds.color;
-            ctx.lineWidth = 2;
-            ctx.lineJoin = 'round';
-            ctx.lineCap = 'round';
-
-            let started = false;
-            vals.forEach((v, i) => {
-                if (v === null) return;
-                const x = PAD.left + (i / (sorted.length - 1)) * plotW;
-                const y = PAD.top + plotH - ((v - minV) / range) * plotH;
-                if (!started) { ctx.moveTo(x, y); started = true; }
-                else ctx.lineTo(x, y);
-            });
-            ctx.stroke();
-
-            // Dots on last point
-            const lastIdx = vals.map((v, i) => v !== null ? i : -1).filter(i => i >= 0).pop();
-            if (lastIdx !== undefined) {
-                const x = PAD.left + (lastIdx / (sorted.length - 1)) * plotW;
-                const y = PAD.top + plotH - ((vals[lastIdx] - minV) / range) * plotH;
-                ctx.beginPath();
-                ctx.arc(x, y, 4, 0, Math.PI * 2);
-                ctx.fillStyle = ds.color;
-                ctx.fill();
-            }
-        });
+        `).join('');
     }
 
     return {
-        showToast,
-        setSyncStatus,
-        showPreSyncLoader,
-        hidePreSyncLoader,
-        renderStats,
-        renderProgressBars,
-        renderTable,
-        renderChart,
-        fmtDate,
-        fmtN,
+        showToast, setSyncStatus, showPreSyncLoader, hidePreSyncLoader,
+        renderStats, renderTable,
+        toggleDataset, switchChartType,
+        resizeChart,
+        fmtDate, fmtN,
     };
 })();
