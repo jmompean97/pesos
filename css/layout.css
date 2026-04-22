@@ -453,7 +453,7 @@
   max-width: 260px;
 }
 
-.person-tab-group:hover {
+.person-tab-group:has(.person-tab:hover) {
   background: var(--glass);
   border-color: var(--glass-border);
 }
