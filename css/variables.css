@@ -85,9 +85,6 @@ body {
   min-height: 100vh;
   line-height: 1.6;
   transition: background 0.35s ease, color 0.35s ease;
-  background-image:
-    radial-gradient(ellipse 80% 60% at 20% -10%, rgba(236, 72, 153, 0.10) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 80% 110%, rgba(59, 130, 246, 0.10) 0%, transparent 60%);
 }
 
 /* =============================================
