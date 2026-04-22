@@ -373,10 +373,17 @@
   max-width: 1100px;
   margin: 0 auto;
   display: flex;
+  justify-content: center;
   gap: 1rem;
   padding: 0.75rem 0;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 800px) {
+  .person-tabs {
+    justify-content: flex-start;
+  }
 }
 
 .person-tab-group {
@@ -493,6 +500,13 @@
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1;
+  display: none;
+}
+
+@media (min-width: 368px) {
+  .person-tab-name {
+    display: initial;
+  }
 }
 
 .person-tab-sub {
