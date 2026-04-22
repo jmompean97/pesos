@@ -4,14 +4,14 @@ Seguimiento visual del progreso de pérdida de peso y medidas corporales — **G
 
 ## ¿Qué hace?
 
-- **Dos secciones independientes**: una para Gema (muslo izquierdo) y otra para Jorge (muslo derecho).
-- **Registro semanal** de: peso, muslo, cintura, cadera y pecho.
-- **Estadísticas en tiempo real**: último valor, diferencia respecto a la semana anterior y delta total desde el inicio.
-- **Barras de progreso** visuales por métrica.
-- **Gráfica sparkline** de evolución (muslo, cintura y peso).
+- **Pestañas independientes**: una para Jorge (muslo derecho) y otra para Gema (muslo izquierdo).
+- **Registro y edición**: añade, edita y borra registros diarios o semanales de peso, muslo, cintura, cadera y pecho con control de fecha y hora exacta.
+- **Estadísticas en tiempo real**: último valor y progreso (subida/bajada) respecto a la medición anterior.
+- **Gráficas interactivas avanzadas (Chart.js)**: dos gráficas separadas (Peso en kg y Medidas en cm) con soporte para cambiar entre formato de *Líneas* y *Barras*, además de ocultar/mostrar métricas individuales.
+- **100% Responsive / Mobile First**: diseño adaptable a móviles con menú superior fijo y componentes fluidos, siguiendo el mismo estilo premium que el proyecto *Bancos*.
 - **Sync con GitHub Gist** — misma mecánica que BancoComp: PAT + Gist ID, datos sincronizados en la nube y accesibles desde cualquier dispositivo.
 - **Modo oscuro / claro** con persistencia.
-- **Exportar / Importar JSON** para backup manual.
+- **Exportar / Importar JSON** para backup o inyección manual de datos.
 
 ## Estructura de archivos
 
