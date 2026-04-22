@@ -503,12 +503,6 @@
   display: none;
 }
 
-@media (min-width: 368px) {
-  .person-tab-name {
-    display: initial;
-  }
-}
-
 .person-tab-sub {
   font-size: 0.72rem;
   color: var(--text-muted);
@@ -517,10 +511,12 @@
   margin-top: 2px;
 }
 
-.person-tab>span:not(.person-tab-avatar) {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
+@media (min-width: 368px) {
+  .person-tab>span:not(.person-tab-avatar) {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
 }
 
 @media (max-width: 480px) {
