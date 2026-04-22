@@ -122,12 +122,6 @@ body {
   --shadow-btn: 0 4px 20px rgba(59, 130, 246, 0.3);
 }
 
-[data-theme="light"] body {
-  background-image:
-    radial-gradient(ellipse 80% 60% at 20% -10%, rgba(236, 72, 153, 0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 80% 110%, rgba(59, 130, 246, 0.06) 0%, transparent 60%);
-}
-
 /* =============================================
    SCROLLBAR
    ============================================= */
